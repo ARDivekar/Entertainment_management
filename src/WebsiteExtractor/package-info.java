@@ -22,7 +22,10 @@
  *  		Note: this is the genre list. Each genre contains books.
  *  		Note 2: Each book page has a 'category' section, which may not match the genre.
  *  	- !!!!Goodreads complete genre list (http://www.goodreads.com/genres/list)
- *  		Note: This resource is not really viable. Books outnumber Movies and TV Shows by a HUGE amount, becuase it's cheap to write a book.  
+ *  		Note: This resource is not really viable. Books outnumber Movies and TV Shows by a HUGE amount, becuase it's cheap to write a book.
+ *  
+ * 	# Newspapers and blogs:
+ * 		User adds his/her own sources. 
  *  
  *  
  *  
@@ -38,4 +41,4 @@
  * @author ardivekar
  *
  */
-package Website_Extractor;
+package WebsiteExtractor;
