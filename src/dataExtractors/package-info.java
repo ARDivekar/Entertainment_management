@@ -8,7 +8,7 @@
  *  		Note 2: some movies belong to >1 genre on their movie page
  *  
  * 	# TV Shows:
- * 		- IMDb (http://www.imdb.com/chart/toptv/?sort=rk,asc&mode=simple&page=1). 
+ * 		- IMDb (http://www.imdb.com/chart/toptv/?sort=rk,asc&mode=simple). 
  * 			Note: see side panel for genres, extract from there.
  * 			Note 2: some TV shows belong to >1 genre.
  * 
@@ -41,4 +41,4 @@
  * @author ardivekar
  *
  */
-package WebsiteExtractor;
+package dataExtractors;
