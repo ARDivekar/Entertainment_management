@@ -1,7 +1,7 @@
 
 package dbDataTypes;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Music extends Listing {
 	
@@ -14,53 +14,8 @@ public class Music extends Listing {
 	private float songLengthMinutes=0;
 	private float songLengthSeconds=0;
 	private String genreList="";
-	private Date released=null;
+	private Date releaseDate=null;
 	private String copyright="";
-	
-	public Music(int listingID, AggregatedRating rating, String name, String artistList, String albumName,
-			int indexInAlbum, float songLengthMinutes, float songLengthSeconds, String genreList, Date released,
-			String copyright) {
-		super(listingID, rating);
-		this.name = name;
-		this.artistList = artistList;
-		this.albumName = albumName;
-		this.indexInAlbum = indexInAlbum;
-		this.songLengthMinutes = songLengthMinutes;
-		this.songLengthSeconds = songLengthSeconds;
-		this.genreList = genreList;
-		this.released = released;
-		this.copyright = copyright;
-	}
-	public String getName() {
-		return name;
-	}
-	public String getArtistList() {
-		return artistList;
-	}
-	public String getAlbumName() {
-		return albumName;
-	}
-	public int getIndexInAlbum() {
-		return indexInAlbum;
-	}
-	public float getSongLengthMinutes() {
-		return songLengthMinutes;
-	}
-	public float getSongLengthSeconds() {
-		return songLengthSeconds;
-	}
-	public String getGenreList() {
-		return genreList;
-	}
-	public Date getReleased() {
-		return released;
-	}
-	public String getCopyright() {
-		return copyright;
-	}
-
-
-	
 	
 	
 }

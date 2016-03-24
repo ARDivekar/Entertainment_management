@@ -5,6 +5,9 @@ import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -23,6 +26,9 @@ public class Start {
 	 *  
 	*/
 	
+
+	
+	
 	public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
 //		Document doc = Jsoup.connect("http://google.com").get();
 //		System.out.println(doc.html());
@@ -36,9 +42,18 @@ public class Start {
 		if(m.find()){
 			System.out.println("lol"+m.group(1)+"LOL");
 		}
-		else System.out.println("Not found");
+//		else System.out.println("Not found");
 		 
 		EntertainmentManagementDatabase db = EntertainmentManagementDatabase.getDB();
-		System.out.println(db.isConnected());
+		System.out.println("Connected to database: "+ db.isConnected());
+		System.out.println("Initialized database: " + db.init());
+		
+//		Start that=new Start();
+		Date d= new Date(0);
+		Time t=new Time(0);
+		System.out.println(t.toString());
+		
 	}
+	
 }
+
