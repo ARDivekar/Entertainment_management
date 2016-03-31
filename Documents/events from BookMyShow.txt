@@ -23,6 +23,9 @@ We recommend that you arrive at least 20 minutes prior at the venue to pick up y
 
 
 
+
+
+
 Event:
 	a.	Name: Bollywood Dream Tour
 	b.	Category: BOLLYWOOD; GUIDED; TOURS; OTHERS; 2 HRS;
@@ -61,6 +64,8 @@ Slot 4 : 5:00 pm to 7 :00 pm
 
 
 
+
+
 Event:
 	a.	Name: ICC World T20 2016 Screening @ La Patio
 	b.	Category: FOOD / DRINKS; ENGLISH;
@@ -87,6 +92,9 @@ Bookmyshow will not be held responsible for any unavailability of tables at the 
 			Tickets once booked cannot be exchanged or refunded.
 			We recommend that you arrive at least 20 minutes prior at the venue to pick up your physical tickets.
 	
+
+
+
 
 
 
@@ -138,14 +146,62 @@ The 160-year old school Convent of Jesus and Mary, Fort, has voluntarily forgone
 
 
 Event:
-	a.	Name: 
-	b.	Category:
-	c.	Venue:
-	d.	fromDate:
-	e.	fromTime:
-	f.	description:
-	g.	pricesList:
+	a.	Name: Oyster Sailing
+	b.	Category: ADVENTURE; TRAVEL; 
+	c.	Venue: Gateway Of India: Mumbai,
+Jetty No.5, Shivaji Marg, Apollo Bunder, Colaba, Taj Hotel Gate, Mumbai, Maharashtra 400001, India
+	d.	fromDate: Thu 31 Mar;
+	e.	fromTime: 06:00 PM;
+	f.	description: Create a panache of memories with your loved ones in galore to all the serenity. Be swept away to your cabin sail yacht that is adorned with plush interiors in this two-hour package, where you drift further away into the magical waters of the Arabian Sea. Feel the wind in your air and the thrill of sailing. Feast your eyes on the clear horizon as you leisure out with your legs down in the water with breathtaking views of Gateway Of India, some of Mumbai's oldest lighthouses and naval bases and, if you are lucky enough, get a view of the jumping dolphins.
+
+Kindly confirm the booking post payment with the organizer. Kindly call or e-mail on the following:-
+E-Mail: enquiry@oystersailing.in 
+Enquiry: + 91 8080340240
+	g.	pricesList: Romantic Candle: Rs. 29000; Jeanneau 45: Rs. 26000; Macgregor 26S: Rs. 7500; Cabin Sail Boat: Rs. 6000;
 	h.	terms and conditions:
+		Age limit: 6 years and above.
+		Booking confirmation subject to availability of slot.
+		For every booking, a 100% advance fee for booking confirmation.
+		Taxes at the rate 12.36% applicable over the above booking fee. Ticket holder must carry National identity proof.
+		The time slot booked by the ticket holder will be for that fixed time period only, and will remain unaffected by any delay on behalf of the ticket holders. Ticket holders must adhere to all safety norms as per captains and sailing guidelines.
+		Any damage to the yacht would be billed to the ticket holder.
+		Any unlawful action and activity by any ticket holder shall be actioned on a serious note.
+		Defame, abuse, harass, stalk, threaten or otherwise violate the legal rights (such as rights of privacy and publicity) of others.
+		The ticket holder shall take care of their personal belongings, crew shall not be held liable.
+		Experience is subject to weather and other conditions.
+		No money refund policy.
+		If the experience cannot be conducted due to weather/ any other reason, refund of up to 90% of the package price.
+		Kindly confirm the booking post payment with the organizer. Kindly call or e-mail on the following:-
+		E-Mail: enquiry@oystersailing.in
+		Enquiry: + 91 8080340240
+		Internet handling fee per ticket may be levied. Please check your total amount before payment.
+		Tickets once booked cannot be exchanged or refunded.
+		We recommend that you arrive at least 20 minutes prior at the venue to pick up your physical tickets.
+
+
+
+
+
+
+
+
+Event:
+	a.	Name: Mumbai Helicopter Ride
+	b.	Category: ADVENTURE; CITY; TRAVEL;
+	c.	Venue: Juhu Airport: Mumbai, Juhu Aerodrome, S V Road, Vile Parle West, Mumbai, Maharashtra 400056, India
+	d.	fromDate: Fri 01 Apr; Sat 02 Apr; Sun 03 Apr; Mon 04 Apr; Tue 05 Apr; Wed 06 Apr; Thu 07 Apr; Fri 08 Apr; Sat 09 Apr; Sun 10 Apr; Mon 11 Apr; Tue 12 Apr; Wed 13 Apr; Thu 14 Apr; Fri 15 Apr
+	e.	fromTime: 11:00 AM; 11:00 AM; 11:00 AM; 11:00 AM; 11:00 AM; 11:00 AM; 11:00 AM; 11:00 AM; 11:00 AM; 11:00 AM; 11:00 AM; 11:00 AM; 11:00 AM; 11:00 AM; 11:00 AM
+	f.	description: A helicopter joy ride 1000 feet above the city or the coast is an unforgettable way to experience the breathtaking beauty of Mumbai and its surrounding areas. The flight begins with a pre-flight briefing before you take to the skies and spot some famous icons. Enjoy the panoramic views of Mumbai and its coastline from your armchair in the sky for this is truly a once in a life time experience.
+Note: The time slot is subject to change. You will be informed about the same to confirm your ride.
+	g.	pricesList: 15 Min: Rs. 5500; 15 Min: Rs. 5500; 15 Min: Rs. 5500; 15 Min: Rs. 5500; 15 Min: Rs. 5500; 15 Min: Rs. 5500; 15 Min: Rs. 5500; 15 Min: Rs. 5500; 15 Min: Rs. 5500; 15 Min: Rs. 5500; 15 Min: Rs. 5500; 15 Min: Rs. 5500; 15 Min: Rs. 5500; 15 Min: Rs. 5500; 15 Min: Rs. 5500;
+	h.	terms and conditions: 
+		Please reconfirm booking one day prior to the date of travel via email on charter@accretion.in.
+		Age limit: 4 years and above.
+		Internet handling fee per ticket may be levied. Please check your total amount before payment.
+		Tickets once booked cannot be exchanged or refunded.
+		We recommend that you arrive at least 20 minutes prior at the venue to pick up your physical tickets.
+
+
 
 
 
