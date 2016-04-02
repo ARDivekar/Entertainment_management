@@ -2,10 +2,13 @@ package dbDataTypes;
 
 
 abstract public class Listing {
-	protected int listingID=-1;
-	protected AggregatedRating rating=null;
-	
-		
+	public Listing() {
+	}
+    
+	protected int listingID;
+	protected AggregatedRating rating;
+	protected ListingType listingType;
+	protected String imagePath;
 	
 }
  

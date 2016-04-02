@@ -1,23 +1,52 @@
 package dbDataTypes;
 
 import java.sql.Date;
+import java.sql.ResultSet;
 import java.sql.Time;
+import java.util.Set;
 
 public class Event{
-	private int eventID=-1;
-	private String name="";
-	private String category="";
-	private String venue="";
-	private Date fromDate=null;
-	private Time fromTime=null; // HH:MM:SS
-	private Date toDate=null;	
-	private Time toTime=null;	// HH:MM:SS
-	private String description="";
-	private String pricesList="";	//e.g. VIP: Rs. 500, etc. 
-	private String termsAndConditions="";
-	private AggregatedRating rating=null;
+
+    public Event() {
+	}
+
+
+	private int eventID;
+	private String name;
+	private String category;
+	private String venue;
+	private Date fromDate; // YY-MM-DD
+	private Time fromTime; // HH:MM:SS
+	private String description;
+	private String pricesList; //e.g. VIP: Rs. 500, etc. 
+	private String termsAndConditions;
+	public String imagePath;
+
+
+	public Set<Event> getNewEventsDB(String username) {
+		// TODO implement here
+		return null;
+	}
+
+	public String clearEventsFromUserProfileDB(String username) {
+		// TODO implement here
+		return "";
+	}
+
+	public int extractEventsFromWeb(int numberOfEvents) {
+		// TODO implement here
+		return 0;
+	}
+
 	
-	
+    private boolean writeToDatabase(Event objToWrite){
+        return false;
+    }
+    
+    private Set<Event> convertFromResultSet(ResultSet inputResultSet){
+        return null;
+    }
+
 	
 	
 	

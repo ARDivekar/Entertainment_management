@@ -2,9 +2,13 @@ package dbDataTypes;
 
 public class AggregatedRating {
 	//given to a listing, not given by users (for that, see UserRating.java).
-	private int listingID = -1;
-	private float starsOutOf10 = -1;
-	private int numberOfReviews = -1;
-	private String reviewText="";
+	public AggregatedRating() {
+	}
+    
+	private int listingID;
+	private float ratingOutOf10;
+	private int numberOfReviews;
+    private String reviewText;  //only applicable when numberOfReviews == 1
+	private ListingType listingType;
 	
 }
