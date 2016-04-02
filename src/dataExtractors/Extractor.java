@@ -1,8 +1,5 @@
 package dataExtractors;
 
-import Exceptions.CannotExtractException;
-import Exceptions.NoDBException;
-
 abstract public class Extractor {
 	protected String listingType="";
 	protected int numListings=10;

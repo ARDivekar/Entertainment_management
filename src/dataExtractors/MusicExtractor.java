@@ -1,6 +1,4 @@
 package dataExtractors;
-import Exceptions.CannotExtractException;
-import Exceptions.NoDBException;
 import dbDataTypes.*;
 public class MusicExtractor extends Extractor{
 	private Music[] extractedMusicListings;

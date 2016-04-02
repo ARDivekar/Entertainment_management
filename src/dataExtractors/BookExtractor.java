@@ -1,6 +1,4 @@
 package dataExtractors;
-import Exceptions.CannotExtractException;
-import Exceptions.NoDBException;
 import dbDataTypes.*;
 public class BookExtractor extends Extractor{
 	private Book[] extractedBookListings;
@@ -29,12 +27,12 @@ public class BookExtractor extends Extractor{
 	}
 	
 	@Override
-	protected void extract() throws CannotExtractException{
+	protected void extract()  throws CannotExtractException{
 		
 	}
 
 	@Override
-	protected void saveToDB() throws NoDBException{
+	protected void saveToDB()  throws NoDBException{
 		
 	}
 	
