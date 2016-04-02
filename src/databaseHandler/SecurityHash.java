@@ -4,12 +4,12 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-abstract class Hasher {
+public abstract class SecurityHash {
 	
-	static String MD5(String text){
+	private static String MD5(String text){
 		/*Source: http://stackoverflow.com/a/421696/4900327
 		 *
-		 * usage: database.store("Password", Hasher.MD5("lorem ipsum"));
+		 * usage: database.store("Password", SecurityHash.MD5("lorem ipsum"));
 		*/
 
 		MessageDigest m;
@@ -31,5 +31,12 @@ abstract class Hasher {
 		  hashtext = "0"+hashtext;
 		}
 		return hashtext;
+	}
+    
+    public static String hashPassword(String password, String securityType) {
+		// TODO implement here
+        if(securityType.equals("MD5"))
+            return MD5(password);
+		return "";
 	}
 }
