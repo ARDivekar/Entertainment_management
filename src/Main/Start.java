@@ -32,7 +32,7 @@ public class Start {
 	public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
 //		Document doc = Jsoup.connect("http://google.com").get();
 //		System.out.println(doc.html());
-		String line="Perso"
+		String line="Person("
 				+ "KAHKLHA"
 				+ "sas"
 				+ ");";
@@ -44,7 +44,7 @@ public class Start {
 		}
 //		else System.out.println("Not found");
 		 
-		EntertainmentManagementDatabase db = EntertainmentManagementDatabase.getDB();
+		EntertainmentManagementDatabase db = EntertainmentManagementDatabase.getInstance();
 		System.out.println("Connected to database: "+ db.isConnected());
 		System.out.println("Initialized database: " + db.init());
 		
