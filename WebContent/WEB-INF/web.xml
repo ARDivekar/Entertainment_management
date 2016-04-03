@@ -8,9 +8,28 @@
         <servlet-name>Starter</servlet-name>
         <url-pattern>/Starter</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Starter</servlet-name>
+        <url-pattern>/lol/mygod</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>DisplayImage</servlet-name>
+        <servlet-class>servlets.DisplayImage</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>DisplayImage</servlet-name>
+        <url-pattern>/images/*</url-pattern>
+    </servlet-mapping>
+    
+    
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    
+    <Context docBase="F:\Workspaces\Java\Projects\Entertainment_mgmt/" path="/" reloadable="true"/>
 </web-app>

@@ -6,7 +6,7 @@ import dbDataTypes.*;
 
 
 public class EntertainmentManagementDatabase extends SQLiteDatabaseHandler {
-	
+	public static final String projectBasePathFolder = "F:/Workspaces/Java/Projects/Entertainment_mgmt/";
     
 	private static EntertainmentManagementDatabase singleton=null;
     

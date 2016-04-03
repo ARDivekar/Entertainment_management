@@ -1,7 +1,7 @@
 <%-- 
-    Document   : index.jsp
-    Created on : 2 Apr, 2016, 10:18:25 AM
-    Author     : Abhishek Divekar
+    Document   : index
+    Created on : Mar 20, 2013, 2:58:01 PM
+    Author     : ADMIN
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        
+        <h1>Hello World!</h1>
     </body>
 </html>

@@ -4,11 +4,15 @@
  * and open the template in the editor.
  */
 
+import dataExtractors.DownloadImage;
 import databaseHandler.EntertainmentManagementDatabase;
 import databaseHandler.*;
 import dbDataTypes.*;
+import java.io.File;
+import java.io.FileInputStream;
 //import dbDataTypes.Music;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.Date;
@@ -21,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -54,6 +59,7 @@ public class Starter extends HttpServlet {
             out.println("<h1>Servlet Starter at " + request.getContextPath() + "</h1>");
             
             
+            
             String line="Person ("
 				+ "KAHKLHA"
 				+ "sas"
@@ -81,23 +87,22 @@ public class Starter extends HttpServlet {
             out.println("<br>");
             out.println("<br>");
             
-            
-            
-            
+            out.println("<img src=\"/images/logo.png\">"); 
+            DownloadImage.download("https://s.yimg.com/nn/fp/rsz/040216/images/smush/pratyusha_635x250_1459573618.jpg", "F:\\Workspaces\\Java\\Projects\\Entertainment_mgmt\\src\\images/yahoo_image.jpg");
             
 //            User.writeToDatabase(
 //                new User("ARDivekar1234567", "abhishek.r.divekar@gmail.com", "Abhishek", "Divekar", EntertainmentManagementDatabase.convertStringToDate("1995-8-9"), Gender.M, SecurityHash.hashPassword("Hey","MD5")));
             
-            String query = "SELECT User.username as 'username', emailID, firstName, lastName, "+ EntertainmentManagementDatabase.convertSelectFieldToSQLiteDBUNIXEpochdDateSelectFieldString("DOB") +", gender, passwordHash \n" +
-"FROM User join Login on User.username = Login.username;";
-            
-//            System.out.println("\n\n"+query);
-            
-            ResultSet usersList = db.tryArbitrarySelect(query);
-            
-              
-            ArrayList<User> users = User.convertFromResultSet(usersList);
-            
+//            String query = "SELECT User.username as 'username', emailID, firstName, lastName, "+ EntertainmentManagementDatabase.convertSelectFieldToSQLiteDBUNIXEpochdDateSelectFieldString("DOB") +", gender, passwordHash \n" +
+//"FROM User join Login on User.username = Login.username;";
+//            
+////            System.out.println("\n\n"+query);
+//            
+//            ResultSet usersList = db.tryArbitrarySelect(query);
+//            
+//              
+//            ArrayList<User> users = User.convertFromResultSet(usersList);
+//            
             db.close();
             
             
