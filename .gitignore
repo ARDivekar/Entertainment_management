@@ -1,10 +1,10 @@
+/bin/
 /build/
 /nbbuild/
 /nbproject/
 /Documents/Generated Code/
 /nb-build.xml
+/nbproject/private/private.properties
+/nbproject/private/private.xml
 *.properties
-nbproject/private/private.properties
-nbproject/private/private.xml
-nbproject/private/*
 *.class
