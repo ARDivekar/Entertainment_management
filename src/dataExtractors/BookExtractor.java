@@ -1,5 +1,5 @@
 package dataExtractors;
-import dbDataTypes.*;
+import EntityClasses.Book;
 public class BookExtractor extends Extractor{
 	private Book[] extractedBookListings;
 	private static BookExtractor singleton=null;

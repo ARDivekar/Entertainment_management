@@ -1,5 +1,5 @@
 package dataExtractors;
-import dbDataTypes.*;
+import EntityClasses.Movie;
 public class MovieExtractor extends Extractor {
 	private Movie[] extractedMovieListings;
 	private static MovieExtractor singleton=null;

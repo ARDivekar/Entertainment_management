@@ -1,5 +1,5 @@
 package InterfaceClasses;
-import dbDataTypes.Gender;
+import EntityClasses.Gender;
 import java.util.*;
 
 public class IC_UserRegister {

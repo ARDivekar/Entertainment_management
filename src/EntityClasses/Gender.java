@@ -1,4 +1,4 @@
-package dbDataTypes;
+package EntityClasses;
 
 public enum Gender {
 	M,

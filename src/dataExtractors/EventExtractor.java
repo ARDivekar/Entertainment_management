@@ -1,5 +1,5 @@
 package dataExtractors;
-import dbDataTypes.*;
+import EntityClasses.Event;
 public class EventExtractor extends Extractor{
 	private Event[] extractedEventListings;
 	private static EventExtractor singleton=null;

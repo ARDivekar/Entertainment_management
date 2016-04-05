@@ -1,4 +1,4 @@
-package dbDataTypes;
+package EntityClasses;
 
 import databaseHandler.DatabaseHandler;
 import databaseHandler.EntertainmentManagementDatabase;

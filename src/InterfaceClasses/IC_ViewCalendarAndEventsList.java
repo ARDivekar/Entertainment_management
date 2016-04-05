@@ -1,5 +1,5 @@
 package InterfaceClasses;
-import dbDataTypes.Event;
+import EntityClasses.Event;
 import java.util.*;
 
 public class IC_ViewCalendarAndEventsList {

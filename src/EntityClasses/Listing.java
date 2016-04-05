@@ -1,4 +1,4 @@
-package dbDataTypes;
+package EntityClasses;
 
 
 abstract public class Listing {

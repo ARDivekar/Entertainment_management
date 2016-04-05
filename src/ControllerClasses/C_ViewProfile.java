@@ -1,6 +1,6 @@
 package ControllerClasses;
-import dbDataTypes.AggregatedRating;
-import dbDataTypes.User;
+import EntityClasses.AggregatedRating;
+import EntityClasses.User;
 import java.util.*;
 
 public class C_ViewProfile {

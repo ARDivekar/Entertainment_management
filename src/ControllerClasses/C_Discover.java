@@ -1,5 +1,8 @@
 package ControllerClasses;
-import dbDataTypes.*;
+import EntityClasses.Book;
+import EntityClasses.TVShow;
+import EntityClasses.Movie;
+import EntityClasses.Music;
 import java.util.*;
 
 public class C_Discover {

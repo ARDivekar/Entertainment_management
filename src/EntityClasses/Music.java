@@ -1,4 +1,4 @@
-package dbDataTypes;
+package EntityClasses;
 
 import java.sql.ResultSet;
 import java.util.*;
