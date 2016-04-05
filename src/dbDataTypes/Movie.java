@@ -59,7 +59,7 @@ public class Movie extends Listing {
         EntertainmentManagementDatabase db = EntertainmentManagementDatabase.getInstance();
         
         String[] userTablefieldsList = {"name", "releaseDate", "budget", "contentRating", "castList", "productionCompanyList", "inColor", "runtime", "languages", "storyline", "genreList", "trivia", "goofs"};
-        String [][]userTableDataList = new String[1][12];
+        String [][]userTableDataList = new String[1][13];
         
         userTableDataList[0][0]=objToWrite.name; 
         userTableDataList[0][1]=EntertainmentManagementDatabase.convertDateToSQLiteDBUNIXEpochString(objToWrite.releaseDate);  
@@ -75,8 +75,8 @@ public class Movie extends Listing {
         userTableDataList[0][11]=objToWrite.trivia;
         userTableDataList[0][12]=objToWrite.goofs;
         
-        boolean userInsertStatus = db.tryInsert("Movie", userTablefieldsList, userTableDataList);
-        System.out.println("\nMOVIE INSERTION STATUS: "+ userInsertStatus);
+        boolean insertStatus = db.tryInsert("Movie", userTablefieldsList, userTableDataList);
+        System.out.println("\nMOVIE INSERTION STATUS: "+ insertStatus);
 
         return false;
     }
