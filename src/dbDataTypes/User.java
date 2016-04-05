@@ -89,21 +89,21 @@ public class User {
         
         try {
 			while(inputResultSet.next()){
-               String username = inputResultSet.getString("username"); 
-               		String emailID = inputResultSet.getString("emailID");
-                    String firstName = inputResultSet.getString("firstName");
-                    String lastName = inputResultSet.getString("lastName");
-                    Date DOB = EntertainmentManagementDatabase.convertStringToDate(inputResultSet.getString("DOB"));
-                    Gender gender = null;
-                    if(inputResultSet.getString("gender").equals(Gender.M.toString()))
-                        gender = Gender.M;
-                    else if(inputResultSet.getString("gender").equals(Gender.F.toString()))
-                        gender = Gender.F;
-                    String passwordHash = inputResultSet.getString("passwordHash");
-                    
-                    User tempUser = new User(username, emailID, firstName, lastName, DOB, Gender.M, passwordHash);
-                    System.out.println(tempUser.toString());
-                    usersArrayList.add(tempUser);
+                String username = inputResultSet.getString("username"); 
+                String emailID = inputResultSet.getString("emailID");
+                String firstName = inputResultSet.getString("firstName");
+                String lastName = inputResultSet.getString("lastName");
+                Date DOB = EntertainmentManagementDatabase.convertStringToDate(inputResultSet.getString("DOB"));
+                Gender gender = null;
+                if(inputResultSet.getString("gender").equals(Gender.M.toString()))
+                    gender = Gender.M;
+                else if(inputResultSet.getString("gender").equals(Gender.F.toString()))
+                    gender = Gender.F;
+                String passwordHash = inputResultSet.getString("passwordHash");
+
+                User tempUser = new User(username, emailID, firstName, lastName, DOB, Gender.M, passwordHash);
+                System.out.println(tempUser.toString());
+                usersArrayList.add(tempUser);
 			}
 		} 
 		catch (SQLException e) {

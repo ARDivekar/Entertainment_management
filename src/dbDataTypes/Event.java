@@ -56,19 +56,18 @@ public class Event{
     public static boolean writeToDatabase(Event objToWrite){
          EntertainmentManagementDatabase db = EntertainmentManagementDatabase.getInstance();
         
-        String[] userTablefieldsList = {"eventID", "name", "category", "venue", "fromDate", "fromTime", "description", "pricesList", "termsAndConditions", "imagePath"};
-        String [][]userTableDataList = new String[1][10];
+        String[] userTablefieldsList = {"eventID", "name", "category", "venue", "fromDateTime", "description", "pricesList", "termsAndConditions", "imagePath"};
+        String [][]userTableDataList = new String[1][9];
         
         userTableDataList[0][0]=String.valueOf(objToWrite.eventID); 
         userTableDataList[0][1]=objToWrite.name;  
         userTableDataList[0][2]=objToWrite.category;
         userTableDataList[0][3]=objToWrite.venue;
-        userTableDataList[0][4]=EntertainmentManagementDatabase.convertDateToSQLiteDBUNIXEpochString(objToWrite.fromDate);
-        userTableDataList[0][5]=EntertainmentManagementDatabase.convertTimeToSQLiteDBUNIXEpochString(objToWrite.fromTime);
-        userTableDataList[0][6]=objToWrite.description;
-        userTableDataList[0][7]=objToWrite.pricesList;
-        userTableDataList[0][8]=objToWrite.termsAndConditions;
-        userTableDataList[0][9]=objToWrite.imagePath;
+        userTableDataList[0][4]=EntertainmentManagementDatabase.convertDateTimeToSQLiteDBUNIXEpochString(objToWrite.fromDate, objToWrite.fromTime);
+        userTableDataList[0][5]=objToWrite.description;
+        userTableDataList[0][6]=objToWrite.pricesList;
+        userTableDataList[0][7]=objToWrite.termsAndConditions;
+        userTableDataList[0][8]=objToWrite.imagePath;
 
         boolean insertStatus = db.tryInsert("Event", userTablefieldsList, userTableDataList);
         System.out.println("\nEVENT INSERTION STATUS: "+ insertStatus);

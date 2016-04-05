@@ -1,0 +1,47 @@
+* { font-family: Helvetica, Arial; font-size: 10px;}
+
+.bar {
+margin-bottom: 5px;
+color: #fff;
+padding: 2px;
+text-align: center;
+background: -webkit-gradient(linear, left top, left bottom, from(blue), to(darkblue));
+background-color: darkblue;
+-webkit-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,0.25)));
+-webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+border-radius: 2px;
+-webkit-animation-name:bar;
+-webkit-animation-duration:1s ;
+-webkit-animation-iteration-count:1;
+-webkit-animation-timing-function:ease-out;
+    transition:all 1s ease;
+}
+
+#data-one { -webkit-animation-name:bar-one; font-size: 10px;}
+#data-two { -webkit-animation-name:bar-two; font-size: 10px;}
+#data-three { -webkit-animation-name:bar-three; font-size: 10px;}
+#data-four { -webkit-animation-name:bar-four;  font-size: 10px;}
+
+@-webkit-keyframes bar-one {
+0% { width:0%; }
+100% { width:60%; }
+}
+
+@-webkit-keyframes bar-two {
+0% { width:0%; }
+100% { width:80%; }
+}
+
+@-webkit-keyframes bar-three {
+0% { width:0%; }
+100% { width:64%; }
+
+
+}
+
+@-webkit-keyframes bar-four {
+0% { width:0%; }
+100% { width:97%; }
+
+}
