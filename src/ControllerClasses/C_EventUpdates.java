@@ -1,5 +1,5 @@
 package ControllerClasses;
-import dbDataTypes.Event;
+import EntityClasses.Event;
 import java.util.*;
 
 public class C_EventUpdates {

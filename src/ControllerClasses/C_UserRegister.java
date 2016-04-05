@@ -1,5 +1,5 @@
 package ControllerClasses;
-import dbDataTypes.Gender;
+import EntityClasses.Gender;
 import java.util.*;
 
 public class C_UserRegister {

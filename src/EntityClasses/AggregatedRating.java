@@ -1,4 +1,4 @@
-package dbDataTypes;
+package EntityClasses;
 
 public class AggregatedRating {
 	//given to a listing, not given by users (for that, see UserRating.java).

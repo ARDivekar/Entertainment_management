@@ -1,4 +1,4 @@
-package dbDataTypes;
+package EntityClasses;
 
 import databaseHandler.EntertainmentManagementDatabase;
 import java.sql.Date;

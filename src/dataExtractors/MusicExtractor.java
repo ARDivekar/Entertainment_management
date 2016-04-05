@@ -1,5 +1,5 @@
 package dataExtractors;
-import dbDataTypes.*;
+import EntityClasses.Music;
 public class MusicExtractor extends Extractor{
 	private Music[] extractedMusicListings;
 	private static MusicExtractor singleton=null;

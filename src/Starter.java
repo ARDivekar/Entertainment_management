@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
+import EntityClasses.Movie;
 import dataExtractors.DownloadImage;
 import databaseHandler.EntertainmentManagementDatabase;
 import databaseHandler.*;
-import dbDataTypes.*;
 import java.io.File;
 import java.io.FileInputStream;
 //import dbDataTypes.Music;

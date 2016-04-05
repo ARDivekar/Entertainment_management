@@ -1,5 +1,5 @@
 package InterfaceClasses;
-import dbDataTypes.Ownership;
+import EntityClasses.Ownership;
 import java.util.*;
 
 public class IC_ModifyCollection {

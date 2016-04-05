@@ -2,7 +2,6 @@ package databaseHandler;
 
 import java.sql.Date;
 
-import dbDataTypes.*;
 
 
 public class EntertainmentManagementDatabase extends SQLiteDatabaseHandler {

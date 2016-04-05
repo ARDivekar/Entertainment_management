@@ -1,5 +1,5 @@
 package dataExtractors;
-import dbDataTypes.*;
+import EntityClasses.TVShow;
 public class TVShowExtractor extends Extractor{
 	private TVShow[] extractedMusicListings;
 	private static TVShowExtractor singleton=null;

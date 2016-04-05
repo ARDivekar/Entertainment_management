@@ -1,6 +1,6 @@
 
 package InterfaceClasses;
-import dbDataTypes.ListingType;
+import EntityClasses.ListingType;
 import java.util.*;
 
 public class IC_ViewCollection {

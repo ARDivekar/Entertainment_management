@@ -1,5 +1,5 @@
 package ControllerClasses;
-import dbDataTypes.Ownership;
+import EntityClasses.Ownership;
 import java.util.*;
 
 public class C_AddToCollection {
