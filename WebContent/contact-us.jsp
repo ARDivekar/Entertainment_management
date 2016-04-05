@@ -90,7 +90,7 @@
                         </li>
                         <li><a href="calendar.html">Events</a></li>
                         <li><a href="register.jsp">Register</a></li>
-                        <li><a href="login.html">Login</a></li>
+                        <li><a href="login.jsp">Login</a></li>
                         <li class="active"><a href="contact-us.html">Contact</a></li>
                     </ul>
                 </div>
