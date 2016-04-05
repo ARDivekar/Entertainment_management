@@ -1,2 +1,0 @@
-databaseHandler.DatabaseHandler
-databaseHandler.DatabaseType
