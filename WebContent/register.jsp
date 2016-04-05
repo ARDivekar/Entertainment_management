@@ -101,7 +101,7 @@
 				<div class="collapse navbar-collapse navbar-right">
 					<ul class="nav navbar-nav">
 						<li ><a href="index.jsp">Home</a></li>
-						<li class="active"><a href="about-us.html">Our Team</a></li>
+						<li ><a href="about-us.html">Our Team</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Discover<i class="fa fa-angle-down"></i></a>
 							<ul class="dropdown-menu">
@@ -112,8 +112,8 @@
 							</ul>
 						</li>
 						<li><a href="calendar.html">Events</a></li>
-						<li><a href="register.jsp">Register</a></li>
-						<li><a href="login.html">Login</a></li>
+						<li class="active"><a href="register.jsp">Register</a></li>
+						<li><a href="login.jsp">Login</a></li>
 						<li><a href="contact-us.jsp">Contact</a></li>
 					</ul>
 				</div>

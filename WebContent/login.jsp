@@ -197,8 +197,8 @@
                         </li>
                         <li><a href="calendar.html">Events</a></li>
                         <li><a href="register.jsp">Register</a></li>
-                        <li><a href="login.jsp">Login</a></li>
-                        <li class="active"><a href="contact-us.jsp">Contact</a></li>
+                        <li class="active"><a href="login.jsp">Login</a></li>
+                        <li><a href="contact-us.jsp">Contact</a></li>
                     </ul>
                 </div>
             </div><!--/.container-->

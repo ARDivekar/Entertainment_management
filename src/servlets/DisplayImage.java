@@ -5,7 +5,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 public class DisplayImage extends HttpServlet {
-    public final String imagesBase = "F:\\Workspaces\\Java\\Projects\\Entertainment_mgmt\\src\\images/";
+    public final String imagesBase = "F:\\Workspaces\\Java\\Projects\\Entertainment_mgmt/images/";
     
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException{
         String URLAfterWebDomain = request.getRequestURI();
