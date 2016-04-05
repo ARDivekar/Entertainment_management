@@ -103,6 +103,26 @@ public class Starter extends HttpServlet {
 //              
 //            ArrayList<User> users = User.convertFromResultSet(usersList);
 //            
+            
+            
+            Movie.writeToDatabase(
+                    new Movie("Deadpool", EntertainmentManagementDatabase.convertStringToDate("2016-3-15"),
+                            50000, "adult", "Ryan", "Disney", true, 5, "English", "This is about Deadpool" , "Action, Thriller", 
+                            "Reynolds acts in this movie", "Ryan Reynolds is funny")
+       //       new Movie("Deadpool", EntertainmentManagementDatabase.convertStringToDate("2016-3-15") , 50000, 9, "Ryan Reynolds", "Disney" , true,
+                    //125 , "English", "This is about Deadpool" , "Action, Thriller", "Reynolds acts in this movie", "Ryan Reynolds is funny")
+            );
+            
+//        String query = "SELECT Movie.name as 'name', + "EntertainmentManagementDatabase.convertSelectFieldToSQLiteDBUNIXEpochdDateSelectFieldString("date")"+, firstName, lastName, "+ EntertainmentManagementDatabase.convertSelectFieldToSQLiteDBUNIXEpochdDateSelectFieldString("DOB") +", gender, passwordHash \n" +
+//"FROM User join Login on User.username = Login.username;";
+            
+//            System.out.println("\n\n"+query);
+//            
+//            ResultSet usersList = db.tryArbitrarySelect(query);
+//
+//            ResultSet usersList = db.tryArbitrarySelect(query);
+//            ArrayList<User> users = User.convertFromResultSet(usersList);            
+
             db.close();
             
             
