@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Date;
+import java.sql.Time;
 
 public abstract class SQLiteDatabaseHandler extends DatabaseHandler{
     protected DatabaseType databaseType=null;
@@ -43,6 +44,11 @@ public abstract class SQLiteDatabaseHandler extends DatabaseHandler{
     public static String convertDateToSQLiteDBUNIXEpochString(Date date){
         
         return "strftime('%s', '"+convertDateToString(date)+"')";
+    }
+    
+    public static String convertDateTimeToSQLiteDBUNIXEpochString(Date date, Time time){
+        
+        return "strftime('%s', '"+convertDateToString(date)+" "+convertTimeToString(time)+"')";
     }
     
     public static String convertDateStringToSQLiteDBUNIXEpochString(String date){
