@@ -1,8 +1,7 @@
-/bin/*
-/build/*
-/nbbuild/*
-/nbproject/*
-/Documents/Generated Code/*
+/build/
+/nbbuild/
+/nbproject/
+/Documents/Generated Code/
 /nb-build.xml
 *.properties
 nbproject/private/private.properties
