@@ -81,8 +81,11 @@ public class Movie extends Listing {
         return false;
     }
         
-        public ArrayList<Movie> convertFromResultSet(ResultSet inputResultSet){
-            ArrayList<Movie> moviesArrayList = new ArrayList<Movie>();
+    
+    
+    
+    public ArrayList<Movie> convertFromResultSet(ResultSet inputResultSet){
+        ArrayList<Movie> moviesArrayList = new ArrayList<Movie>();
         
         try {
 		while(inputResultSet.next()){

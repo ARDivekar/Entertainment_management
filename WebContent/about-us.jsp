@@ -114,7 +114,7 @@
 							</ul>
 						</li>
 						<li><a href="calendar.html">Events</a></li>
-						<li><a href="register.html">Register</a></li>
+						<li><a href="register.jsp">Register</a></li>
 						<li><a href="login.html">Login</a></li>
 						<li><a href="contact-us.jsp">Contact</a></li>
 					</ul>

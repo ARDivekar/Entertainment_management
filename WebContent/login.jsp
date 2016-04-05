@@ -132,8 +132,8 @@
    <link rel="stylesheet prefetch" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900"> 
   <!-- <link rel="stylesheet prefetch" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
 
-<!--  <link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/login_files/signup_and_login.css">
-  <script type="text/javascript" src="${pageContext.request.contextPath}/JS/login_files/login_validate.js"></script>-->
+<!--  <link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/css/signup_and_login.css">
+  <script type="text/javascript" src="${pageContext.request.contextPath}/JS/js/login_validate.js"></script>-->
   
   
   
@@ -196,7 +196,7 @@
                             </ul>
                         </li>
                         <li><a href="calendar.html">Events</a></li>
-                        <li><a href="register.html">Register</a></li>
+                        <li><a href="register.jsp">Register</a></li>
                         <li><a href="login.jsp">Login</a></li>
                         <li class="active"><a href="contact-us.jsp">Contact</a></li>
                     </ul>
