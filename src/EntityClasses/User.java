@@ -13,9 +13,7 @@ enum UserType{
 	Common, Admin
 }
 
-public class User {
-	
-	
+public class User {	
 
 	private String username;
 	private String emailID;
@@ -39,8 +37,9 @@ public class User {
     
     
 	public String saveUserDetailsToDB(Date DOB, String emailID, String firstName, Gender gender, String lastName, String passwordHash, String username) {
-		// TODO implement here
-		return "";
+		if(writeToDatabase(new User(username, emailID, firstName, lastName, DOB, gender, passwordHash)))
+    		return "Successfully Entered into database";
+        else return "ERROR: Could not write User to database.";
 	}
 
 	public User getUserInfoDB(String username) {
@@ -54,7 +53,9 @@ public class User {
 	}
     
     
-    public static boolean writeToDatabase(User objToWrite){
+    public boolean writeToDatabase(User objToWrite){
+        System.out.println("\n\nTrying to insert into database:\n"+objToWrite);
+        
         EntertainmentManagementDatabase db = EntertainmentManagementDatabase.getInstance();
         
         String[] userTablefieldsList = {"username", "emailID", "firstName", "lastName", "DOB", "gender"};
@@ -84,7 +85,7 @@ public class User {
     
     
     
-    public static ArrayList<User> convertFromResultSet(ResultSet inputResultSet){
+    public ArrayList<User> convertFromResultSet(ResultSet inputResultSet){
         ArrayList<User> usersArrayList = new ArrayList<User>();
         
         try {

@@ -11,7 +11,7 @@ public class EntertainmentManagementDatabase extends SQLiteDatabaseHandler {
     
 	private EntertainmentManagementDatabase(){
         //default
-        super("F:/Workspaces/Java/Projects/Entertainment_mgmt/EntertainmentManagement.db");	
+        super(projectBasePathFolder+"EntertainmentManagement.db");	
 	}
 	
 	

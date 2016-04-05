@@ -4,7 +4,7 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public abstract class SecurityHash {
+public class SecurityHash {
 	
 	private static String MD5(String text){
 		/*Source: http://stackoverflow.com/a/421696/4900327

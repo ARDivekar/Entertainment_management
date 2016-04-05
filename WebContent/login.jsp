@@ -248,7 +248,7 @@
     <span class="text">Login</span>
     <span class="loader"></span>
   </header>
-  <form class="form_login">  
+    <form class="form_login" action="loginHandler" method="POST">  
     <input class="input" type="text" placeholder="Username" id="loginUsername">
     <input class="input" type="password" placeholder="Password" id="loginPassword">
 

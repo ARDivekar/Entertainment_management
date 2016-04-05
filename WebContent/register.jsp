@@ -4,7 +4,15 @@
     Author     : Abhishek Divekar
 --%>
 
+<%@page import="InterfaceClasses.IC_UserRegister"%>
+<%@page import="databaseHandler.EntertainmentManagementDatabase"%>
+<%@page import="databaseHandler.DatabaseHandler"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% 
+IC_UserRegister userReg = new IC_UserRegister();
+userReg.displayUserRegisterGUI(response);
+%>
+<!----------
 <!DOCTYPE html>
 <html>
     <head>
@@ -47,7 +55,7 @@
     <!--[if lt IE 9]>
     <script src="${pageContext.request.contextPath}/JS/js/html5shiv.js"></script>
     <script src="${pageContext.request.contextPath}/JS/js/respond.min.js"></script>
-    <![endif]-->       
+    <![endif]--><!----------       
     <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
@@ -83,8 +91,8 @@
                        </div>
                     </div>
                 </div>
-            </div><!--/.container-->
-        </div><!--/.top-bar-->
+            </div><!--/.container--><!----------
+        </div><!--/.top-bar--><!----------
 
         <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
@@ -117,18 +125,18 @@
 						<li><a href="contact-us.jsp">Contact</a></li>
 					</ul>
 				</div>
-            </div><!--/.container-->
-        </nav><!--/nav-->
+            </div><!--/.container--><!----------
+        </nav><!--/nav--><!----------
 	</header><!--/header-->
 
       <!-- Form Mixin-->
       <!-- Input Mixin-->
       <!-- Button Mixin-->
-      <!-- Pen Title-->
+      <!-- Pen Title--><!----------
       <div class="pen-title">
 
       </div>
-      <!-- Form Module-->
+      <!-- Form Module--><!----------
       <div class="module form-module">
 
       <!-- <div class="toggle">
@@ -141,25 +149,38 @@
           <input type="password" placeholder="Password">
           <button>Login</button>
         </form>
-      </div> -->
+      </div> --><!----------
       <div class="form" id="registerForm">
         <h2>Create an account</h2>
-        <form  onSubmit="check_errors()">
-          <input type="text" placeholder="Username" id="uname_input"> <p id="uname_output"></p>
-          <input type="text" placeholder="Email Address" id="email_input"  oninput="email_check()"> <p id="email_output"></p>
-          <input type="password" placeholder="Password" id="password_input1" oninput="pass1_check()" > <p id="pass1_output"></p>
-          <input type="password" placeholder="Re-Type Password" id="password_input2" oninput="pass2_check()"> <p id="pass2_output"></p>
-          <input type="tel" placeholder="Phone Number" id="phoneno_input" oninput="phoneno_check()"> <p id="phoneno_output"></p>
-          <button type="submit">Register</button>
-          <!-- <input type="submit" value="Register"/> -->
+        <form  onSubmit="check_errors()" action="/registerHandler"  method="POST">
+            <input type="text" placeholder="Username" name="uname_input" id="uname_input"> <p id="uname_output"></p>
+            <input type="text" placeholder="First Name" name="fname_input" id="fname_input"> <p id="fname_output"></p>
+            <input type="text" placeholder="Last Name" name="lname_input" id="lname_input"> <p id="lname_output"></p>
+            <select name="gender_input" id="gender_input">
+              <option selected disabled>Choose gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+            <input type="text" placeholder="Email Address" name="email_input" id="email_input"  oninput="email_check()"> <p id="email_output"></p>
+            <input type="password" placeholder="Password" name="password_input1" id="password_input1" oninput="pass1_check()" > <p id="pass1_output"></p>
+            <input type="password"  placeholder="Re-Type Password" name="password_input2" id="password_input2" oninput="pass2_check()"> <p id="pass2_output"></p>
+            <input type="date" placeholder="Date of Birth" name="date_input" id="date_input" max="<% 
+              //java.sql.Date todayDateMinus13Years = new java.sql.Date(new java.util.Date().getTime());
+              //todayDateMinus13Years.setYear(todayDateMinus13Years.getYear()-13);
+              //out.print(EntertainmentManagementDatabase.convertDateToString(todayDateMinus13Years));
+               %>"> <p id="date_output"></p>
+            
+            <button type="submit">Register</button>
+          <!-- <input type="submit" value="Register"/> --><!----------
         </form>
       </div>
-      <!-- <div class="cta"><a href="#">Forgot your password?</a></div> -->
+      <!-- <div class="cta"><a href="#">Forgot your password?</a></div> --><!----------
     </div>
     <!--
         <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
       -->
 
-
+<!----------
     </body>
 </html>
+---------->
