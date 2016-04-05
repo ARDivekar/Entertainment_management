@@ -149,7 +149,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.jsp"><img src="images/logo.png" height="75" width="160" alt="logo"></a>
+                    <a class="navbar-brand" href="index.jsp"><img src="images/ems_logo.png" height="75" width="160" alt="logo"></a>
                 </div>
 				
                 <div class="collapse navbar-collapse navbar-right">
@@ -167,7 +167,7 @@
                         </li>
                         <li><a href="calendar.html">Events</a></li>
                         <li><a href="register.html">Register</a></li>
-                        <li><a href="login.html">Login</a></li>
+                        <li><a href="login.jsp">Login</a></li>
                         <li><a href="contact-us.jsp">Contact</a></li>                        
                     </ul>
                 </div>
