@@ -276,14 +276,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-					&copy; 2016 <a target="_blank" href="http://codersmaze.com/" >Codersmaze</a>. All Rights Reserved.
+                    &copy; 2016 <a target="_blank" href="http://itunes.com/" >Entertainment Management System</a>. All Rights Reserved.
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="/home">Home</a></li>
+                        <li><a href="/about-us">About Us</a></li>
                         <li><a href="#">Faq</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="/contact-us">Contact Us</a></li>
                     </ul>
                 </div>
             </div>

@@ -42,6 +42,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>contact_us</servlet-name>
+        <url-pattern>/contact-us</url-pattern>
         <url-pattern>/contact_us</url-pattern>
         <url-pattern>/contact us</url-pattern>
     </servlet-mapping>
