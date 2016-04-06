@@ -7,6 +7,7 @@
 <%@page import="InterfaceClasses.IC_Login"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% 
+session.removeAttribute("loggedInUsername");
 IC_Login login = new IC_Login();
 login.displayUserLoginGUI(request, response);
 %>

@@ -130,7 +130,13 @@ public class HeaderGenerator {
             return "class=\"active\"";
         return "";
     }
-}+"><a href=\"login.jsp\">Login</a></li>\n" +
+}+"><a href=\"login.jsp\">"+new Object(){
+    public String toString(){
+        if(session.getAttribute("loggedInUsername")==null)
+            return "Login";
+        return "Logout";
+    }
+}+"</a></li>\n" +
                 
                 
                 

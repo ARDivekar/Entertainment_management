@@ -256,9 +256,10 @@ public class IC_Login extends HttpServlet {
     
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
         HttpSession session = request.getSession();
+        session.removeAttribute("loggedInUsername");
         String username=null;
         String password=null;
-
+        
 
         username=request.getParameter("loginUsername");
         password=request.getParameter("loginPassword");
