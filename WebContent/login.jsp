@@ -4,7 +4,13 @@
     Author     : Abhishek Divekar
 --%>
 
+<%@page import="InterfaceClasses.IC_Login"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% 
+IC_Login login = new IC_Login();
+login.displayUserLoginGUI(request, response);
+%>
+<!----------
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +31,7 @@
     <script src="${pageContext.request.contextPath}/JS/js/respond.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/JS/js/move-top.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/JS/js/easing.js"></script>
-    <![endif]-->       
+    <![endif]--> <!----------      
     <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
@@ -135,7 +141,7 @@
 <!--  <link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/css/signup_and_login.css">
   <script type="text/javascript" src="${pageContext.request.contextPath}/JS/js/login_validate.js"></script>-->
   
-  
+  <!----------
   
 </head>
 
@@ -167,8 +173,8 @@
                        </div>
                     </div>
                 </div>
-            </div><!--/.container-->
-        </div><!--/.top-bar-->
+            </div><!--/.container--><!----------
+        </div><!--/.top-bar--><!----------
 
         <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
@@ -201,8 +207,8 @@
                         <li><a href="contact-us.jsp">Contact</a></li>
                     </ul>
                 </div>
-            </div><!--/.container-->
-        </nav><!--/nav-->
+            </div><!--/.container--><!----------
+        </nav><!--/nav--><!----------
     </header><!--/header-->
  <!-- <div class="pen-title">
 
@@ -240,7 +246,7 @@
 
   
 
-</body>-->
+</body>--><!----------
       
 
     <div class="login" style="height:30rem; width:30rem;">
@@ -267,3 +273,5 @@
   </body>
 
 </html>
+    ---------->
+    

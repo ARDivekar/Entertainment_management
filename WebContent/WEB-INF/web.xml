@@ -32,6 +32,8 @@
     <servlet-mapping>
         <servlet-name>home</servlet-name>
         <url-pattern>/home</url-pattern>
+        <url-pattern>/home.html</url-pattern>
+        <url-pattern>/Home</url-pattern>
     </servlet-mapping>
     
     

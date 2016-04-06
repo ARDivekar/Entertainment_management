@@ -10,7 +10,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% 
 IC_UserRegister userReg = new IC_UserRegister();
-userReg.displayUserRegisterGUI(response);
+userReg.displayUserRegisterGUI(request, response);
 %>
 <!----------
 <!DOCTYPE html>

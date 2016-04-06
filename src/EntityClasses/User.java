@@ -39,12 +39,21 @@ public class User {
 	public String saveUserDetailsToDB(Date DOB, String emailID, String firstName, Gender gender, String lastName, String passwordHash, String username) {
 		if(writeToDatabase(new User(username, emailID, firstName, lastName, DOB, gender, passwordHash)))
     		return "Successfully Entered into database";
-        else return "ERROR: Could not write User to database.";
+        else {
+            String errorString = "Unfortunately, could not save details of user '"+username+"'.";
+            return errorString;
+        }
 	}
 
 	public User getUserInfoDB(String username) {
-		// TODO implement here
-		return null;
+		EntertainmentManagementDatabase db = EntertainmentManagementDatabase.getInstance();
+        String query= "SELECT User.username as 'username', emailID, firstName, lastName, date(DOB, 'unixepoch') as 'DOB', gender, passwordHash FROM User inner join Login On User.username=Login.username WHERE User.username=\""+username+"\";";
+        System.out.println(query);
+        ResultSet userResultSet = db.tryArbitrarySelect(query);
+        ArrayList<User> usersWithThatUserName = convertFromResultSet(userResultSet);
+        if (usersWithThatUserName==null || usersWithThatUserName.size()!= 1)
+            return null;
+        else return usersWithThatUserName.get(0);
 	}
 
 	public Set<AggregatedRating> getUserReviewsAndRatingsDB(String username) {
@@ -79,7 +88,9 @@ public class User {
         boolean loginInsertStatus =  db.tryInsert("Login", loginTablefieldsList, loginTableDataList);
         System.out.println("\nLOGIN INSERTION STATUS: "+ loginInsertStatus);
         
-        return true;
+        if(userInsertStatus && loginInsertStatus)
+            return true;
+        else return false;
     }
     
     

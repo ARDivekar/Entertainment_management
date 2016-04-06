@@ -287,7 +287,7 @@ public abstract class DatabaseHandler{
 			else insertQuery+=",\n(";
 			
 			for(j=0; j<dataList[i].length; j++){
-				if(dataList[i][j].equals(""))
+				if( dataList[i][j]==null || dataList[i][j].equals(""))
 					dataList[i][j]="NULL";
                 
                 else if(!dataList[i][j].startsWith("strftime") && !dataList[i][j].startsWith("time") && !dataList[i][j].startsWith("date") && !dataList[i][j].startsWith("datetime")){

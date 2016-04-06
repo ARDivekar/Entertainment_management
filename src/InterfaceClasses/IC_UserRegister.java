@@ -10,12 +10,16 @@ import javax.servlet.http.*;
 
 public class IC_UserRegister extends HttpServlet {
     
-    public void displayUserRegisterGUI(HttpServletResponse response) throws IOException{
-        displayUserRegisterGUI(response, "");
+    
+    public void displayUserRegisterGUI(HttpServletRequest request, HttpServletResponse response) throws IOException{
+        displayUserRegisterGUI(request, response, "");
     }
     
     
-    public void displayUserRegisterGUI(HttpServletResponse response, String registerStatus) throws IOException {
+    public void displayUserRegisterGUI(HttpServletRequest request, HttpServletResponse response, String registerStatus) throws IOException {
+        HttpSession session = request.getSession();
+        
+        
        PrintWriter out=response.getWriter();
        out.print("<!DOCTYPE html>\n" +
 "<html>\n" +
@@ -69,69 +73,10 @@ public class IC_UserRegister extends HttpServlet {
 "   \n" +
 "    <body onLoad=\"showRegisterForm(); onLoadClearForm();\">\n" +
 "\n" +
-"      \n" +
-"    <header id=\"header\">\n" +
-"        <div class=\"top-bar\">\n" +
-"            <div class=\"container\">\n" +
-"                <div class=\"row\">\n" +
-"                    <div class=\"col-sm-6 col-xs-4\">\n" +
-"                        <div class=\"top-number\"><p><i class=\"fa fa-phone-square\"></i>  +91 9619432999</p></div>\n" +
-"                    </div>\n" +
-"                    <div class=\"col-sm-6 col-xs-8\">\n" +
-"                       <div class=\"social\">\n" +
-"                            <ul class=\"social-share\">\n" +
-"                                <li><a href=\"#\"><i class=\"fa fa-facebook\"></i></a></li>\n" +
-"                                <li><a href=\"#\"><i class=\"fa fa-twitter\"></i></a></li>\n" +
-"                                <li><a href=\"#\"><i class=\"fa fa-linkedin\"></i></a></li> \n" +
-"                                <li><a href=\"#\"><i class=\"fa fa-dribbble\"></i></a></li>\n" +
-"                                <li><a href=\"#\"><i class=\"fa fa-skype\"></i></a></li>\n" +
-"                            </ul>\n" +
-"                            <div class=\"search\">\n" +
-"                                <form role=\"form\">\n" +
-"                                    <input type=\"text\" class=\"search-form\" autocomplete=\"off\" placeholder=\"Search\">\n" +
-"                                    <i class=\"fa fa-search\"></i>\n" +
-"                                </form>\n" +
-"                           </div>\n" +
-"                       </div>\n" +
-"                    </div>\n" +
-"                </div>\n" +
-"            </div><!--/.container-->\n" +
-"        </div><!--/.top-bar-->\n" +
-"\n" +
-"        <nav class=\"navbar navbar-inverse\" role=\"banner\">\n" +
-"            <div class=\"container\">\n" +
-"                <div class=\"navbar-header\">\n" +
-"                    <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">\n" +
-"                        <span class=\"sr-only\">Toggle navigation</span>\n" +
-"                        <span class=\"icon-bar\"></span>\n" +
-"                        <span class=\"icon-bar\"></span>\n" +
-"                        <span class=\"icon-bar\"></span>\n" +
-"                    </button>\n" +
-"                    <a class=\"navbar-brand\" href=\"index.jsp\"><img src=\"images/ems_logo.png\" height=\"75\" width=\"160\" alt=\"logo\"></a>\n" +
-"                </div>\n" +
-"\n" +
-"				<div class=\"collapse navbar-collapse navbar-right\">\n" +
-"					<ul class=\"nav navbar-nav\">\n" +
-"						<li ><a href=\"index.jsp\">Home</a></li>\n" +
-"						<li ><a href=\"about-us.html\">Our Team</a></li>\n" +
-"						<li class=\"dropdown\">\n" +
-"							<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Discover<i class=\"fa fa-angle-down\"></i></a>\n" +
-"							<ul class=\"dropdown-menu\">\n" +
-"								<li ><a href=\"discovermovies.html\">Movies</a></li>\n" +
-"								<li><a href=\"discoverbooks.html\">Books</a></li>\n" +
-"								<li><a href=\"discovertvshows\">TVShows</a></li>\n" +
-"								<li><a href=\"discovermusic.html\">Music</a></li>\n" +
-"							</ul>\n" +
-"						</li>\n" +
-"						<li><a href=\"calendar.html\">Events</a></li>\n" +
-"						<li class=\"active\"><a href=\"register.jsp\">Register</a></li>\n" +
-"						<li><a href=\"login.jsp\">Login</a></li>\n" +
-"						<li><a href=\"contact-us.jsp\">Contact</a></li>\n" +
-"					</ul>\n" +
-"				</div>\n" +
-"            </div><!--/.container-->\n" +
-"        </nav><!--/nav-->\n" +
-"	</header><!--/header-->\n" +
+"      \n");
+       
+       out.print(new HeaderGenerator().getHeader(session, "register"));
+       out.print(
 "\n" +
 "      <!-- Form Mixin-->\n" +
 "      <!-- Input Mixin-->\n" +
@@ -211,6 +156,9 @@ out.print(
     }
     
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
+        HttpSession session = request.getSession();
+        session.setAttribute("loggedInUsername", "");
+        
         String username=null;
         String emailID=null;
         String firstName=null;
@@ -227,28 +175,43 @@ out.print(
         
         DOB=EntertainmentManagementDatabase.convertStringToDate(request.getParameter("date_input"));
         String genderString = request.getParameter("gender_input");
-        if(genderString.equalsIgnoreCase("male"))
+        System.out.println(genderString);
+        if(genderString!=null && genderString.equalsIgnoreCase("male"))
             gender=Gender.M;
-        else if(genderString.equalsIgnoreCase("female"))
+        else if(genderString!=null && genderString.equalsIgnoreCase("female"))
             gender=Gender.F;
         
-        enterUserRegisterDetails(username, password, firstName, lastName, emailID, gender, DOB, response);
+        enterUserRegisterDetails(username, password, firstName, lastName, emailID, gender, DOB, request, response);
+        
+        
     }
 
 
 	
 
-	public void enterUserRegisterDetails(String username, String password, String firstName, String lastName, String emailID, Gender gender, Date DOB, HttpServletResponse response) throws IOException {
+	public void enterUserRegisterDetails(String username, String password, String firstName, String lastName, String emailID, Gender gender, Date DOB, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String userDetailsValid = validateUserDetails(DOB, emailID, lastName, firstName,gender, password, username);    
-        if(userDetailsValid.equals("")){ //no errors
+        if(!userDetailsValid.equals("")){ //errors exist
+            displayUserRegisterGUI(request, response, userDetailsValid);
+        }
+        else{
             SecurityHash security = new SecurityHash();
             String passwordHash = security.hashPassword(password, "MD5");
             
             C_UserRegister userRegisterController = new C_UserRegister();
+            
             String registerStatus = userRegisterController.tryUserRegister(DOB, emailID, firstName, gender, lastName, passwordHash, username);
-            displayUserRegisterGUI(response, registerStatus);
+            
+            if(registerStatus.indexOf("Unfortunately")== -1){
+                //we can log in now.
+                HttpSession session = request.getSession();
+                session.setAttribute("loggedInUsername", username);
+            }
+            
+            displayUserRegisterGUI(request, response, registerStatus);
         }
-        else displayUserRegisterGUI(response, userDetailsValid);
+        
+        
             
 	}
 
