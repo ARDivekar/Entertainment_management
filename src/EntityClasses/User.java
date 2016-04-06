@@ -22,6 +22,16 @@ public class User {
 	private java.sql.Date DOB;
 	private Gender gender;
 	private String passwordHash; //saving the raw password anywhere is bad for security purposes. Use Hasher.MD5(passwordString) to get the hash of it.
+    
+     public User() {
+        this.username = null;
+        this.emailID = null;
+        this.firstName = null;
+        this.lastName = null;
+        this.DOB = null;
+        this.gender = null;
+        this.passwordHash = null;
+    }
 
     public User(String username, String emailID, String firstName, String lastName, Date DOB, Gender gender, String passwordHash) {
         this.username = username;

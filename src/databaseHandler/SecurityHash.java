@@ -35,6 +35,8 @@ public class SecurityHash {
     
     public static String hashPassword(String password, String securityType) {
 		// TODO implement here
+        if(password == null || password == "")
+            return null;
         if(securityType.equals("MD5"))
             return MD5(password);
 		return "";

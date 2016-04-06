@@ -4,6 +4,7 @@
     Author     : Abhishek Divekar
 --%>
 
+<%@page import="InterfaceClasses.HeaderGenerator"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +35,8 @@
 </head><!--/head-->
 
 <body>
-
+    <% out.print(new HeaderGenerator().getHeader(session, "contact-us")); %>
+    <!----------
     <header id="header">
         <div class="top-bar">
             <div class="container">
@@ -60,8 +62,8 @@
                        </div>
                     </div>
                 </div>
-            </div><!--/.container-->
-        </div><!--/.top-bar-->
+            </div><!--/.container--><!----------
+        </div><!--/.top-bar--><!----------
 
         <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
@@ -94,9 +96,10 @@
                         <li class="active"><a href="contact-us.html">Contact</a></li>
                     </ul>
                 </div>
-            </div><!--/.container-->
-        </nav><!--/nav-->
-    </header><!--/header-->
+            </div><!--/.container--><!----------
+        </nav><!--/nav--><!----------
+    </header><!--/header--><!----------
+    ---------->
 
     <section id="contact-info">
         <div class="center">                

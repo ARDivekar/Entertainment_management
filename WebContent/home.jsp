@@ -4,6 +4,7 @@
     Author     : Abhishek Divekar
 --%>
 
+<%@page import="InterfaceClasses.HeaderGenerator"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en" >
@@ -111,7 +112,8 @@
 
 <body class="homepage">
 
-
+    <% out.print(new HeaderGenerator().getHeader(session, "home")); %>
+    <!----------
     <header id="header">
         <div class="top-bar">
             <div class="container">
@@ -137,8 +139,8 @@
                        </div>
                     </div>
                 </div>
-            </div><!--/.container-->
-        </div><!--/.top-bar-->
+            </div><!--/.container--><!----------
+        </div><!--/.top-bar--><!----------
 
         <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
@@ -171,10 +173,11 @@
                         <li><a href="contact-us.jsp">Contact</a></li>                        
                     </ul>
                 </div>
-            </div><!--/.container-->
-        </nav><!--/nav-->
+            </div><!--/.container--><!----------
+        </nav><!--/nav--><!----------
 		
-    </header><!--/header-->
+    </header><!--/header--><!----------
+        ---------->
 
     <section id="main-slider" class="no-margin">
         <div class="carousel slide">

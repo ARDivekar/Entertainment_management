@@ -36,6 +36,29 @@
         <url-pattern>/Home</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>contact_us</servlet-name>
+        <jsp-file>/contact-us.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>contact_us</servlet-name>
+        <url-pattern>/contact_us</url-pattern>
+        <url-pattern>/contact us</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>about_us</servlet-name>
+        <jsp-file>/about-us.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>about_us</servlet-name>
+        <url-pattern>/about_us.html</url-pattern>
+        <url-pattern>/about-us</url-pattern>
+        <url-pattern>/about-us.html</url-pattern>
+        <url-pattern>/about us</url-pattern>
+    </servlet-mapping>
+    
     
     
     <servlet>
@@ -60,28 +83,7 @@
         <url-pattern>/Login</url-pattern>
     </servlet-mapping>
     
-    <servlet>
-        <servlet-name>contact_us</servlet-name>
-        <jsp-file>/contact-us.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>contact_us</servlet-name>
-        <url-pattern>/contact_us</url-pattern>
-        <url-pattern>/contact us</url-pattern>
-    </servlet-mapping>
-    
-    
-    <servlet>
-        <servlet-name>about_us</servlet-name>
-        <jsp-file>/about-us.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>about_us</servlet-name>
-        <url-pattern>/about-us</url-pattern>
-        <url-pattern>/about us</url-pattern>
-    </servlet-mapping>
-    
-    
+   
     
     <servlet>
         <servlet-name>IC_UserRegister</servlet-name>
@@ -90,6 +92,16 @@
     <servlet-mapping>
         <servlet-name>IC_UserRegister</servlet-name>
         <url-pattern>/registerHandler</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>IC_Login</servlet-name>
+        <servlet-class>InterfaceClasses.IC_Login</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IC_Login</servlet-name>
+        <url-pattern>/loginHandler</url-pattern>
     </servlet-mapping>
     
     

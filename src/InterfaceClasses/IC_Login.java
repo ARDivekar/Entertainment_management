@@ -1,15 +1,13 @@
 package InterfaceClasses;
+import ControllerClasses.C_Login;
+import databaseHandler.SecurityHash;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.*;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 
-public class IC_Login {
+public class IC_Login extends HttpServlet {
 
-	public IC_Login() {
-	}
+	
     
     public void displayUserLoginGUI(HttpServletRequest request, HttpServletResponse response) throws IOException{        displayUserLoginGUI(request, response, "");
     }
@@ -22,8 +20,52 @@ public class IC_Login {
 		out.print("<!DOCTYPE html>\n" +
 "<html>\n" +
 "<head>\n" +
+"        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n" +
+"        <title>Login</title>\n" +
+"        <link rel=\"stylesheet\" href=\"/CSS/css/signup_and_login.css\">\n" +
+"        <script type=\"text/javascript\" src=\"/JS/js/register_verify.js\"></script>\n" +
+"        <link href=\"/CSS/css/bootstrap.min.css\" rel=\"stylesheet\">\n" +
+"    <link href=\"/CSS/css/font-awesome.min.css\" rel=\"stylesheet\">\n" +
+"    <link href=\"/CSS/css/prettyPhoto.css\" rel=\"stylesheet\">\n" +
+"    <link href=\"/CSS/css/animate.min.css\" rel=\"stylesheet\">\n" +
+"	<link href=\"/CSS/css/main.css\" rel=\"stylesheet\">\n" +
+"    <link href=\"/CSS/css/responsive.css\" rel=\"stylesheet\">\n" +
+"	<style>\n" +
+"		.img{\n" +
+"\n" +
+"			border: 1px solid #000 ;\n" +
+"			-webkit-box-shadow: 5px 5px 5px #2c3e50;\n" +
+"			box-shadow: 1px 1px 1px black;\n" +
+"		}\n" +
+"\n" +
+"		/*MORPH*/\n" +
+"		.morph {\n" +
+"			-webkit-transition: all 0.5s ease;\n" +
+"			-moz-transition: all 0.5s ease;\n" +
+"			-o-transition: all 0.5s ease;\n" +
+"			-ms-transition: all 0.5s ease;\n" +
+"			transition: all 0.5s ease;\n" +
+"		}\n" +
+"\n" +
+"		.morph:hover {\n" +
+"			border-radius: 50%;\n" +
+"			-webkit-transform: rotate(360deg);\n" +
+"			-moz-transform: rotate(360deg);\n" +
+"			-o-transform: rotate(360deg);\n" +
+"			-ms-transform: rotate(360deg);\n" +
+"			transform: rotate(360deg);\n" +
+"		}\n" +
+"	</style>\n" +
+"    <!--[if lt IE 9]>\n" +
+"    <script src=\"/JS/js/html5shiv.js\"></script>\n" +
+"    <script src=\"/JS/js/respond.min.js\"></script>\n" +
+"    <![endif]-->       \n" +
+"    <link rel=\"shortcut icon\" href=\"images/ico/favicon.ico\">\n" +
+"    <link rel=\"apple-touch-icon-precomposed\" sizes=\"144x144\" href=\"images/ico/apple-touch-icon-144-precomposed.png\">\n" +
+"    <link rel=\"apple-touch-icon-precomposed\" sizes=\"114x114\" href=\"images/ico/apple-touch-icon-114-precomposed.png\">\n" +
+"    <link rel=\"apple-touch-icon-precomposed\" sizes=\"72x72\" href=\"images/ico/apple-touch-icon-72-precomposed.png\">\n" +
+"    <link rel=\"apple-touch-icon-precomposed\" href=\"images/ico/apple-touch-icon-57-precomposed.png\">\n" +
 "  <meta charset=\"UTF-8\">\n" +
-"  <title>Login</title>\n" +
 "  <script src=\"/JS/js/modernizr.js\" type=\"text/javascript\"></script>\n" +
 "  <link rel=\"stylesheet\" href=\"/CSS/css1/normalize.css\">    \n" +
 "  <link rel=\"stylesheet\" href=\"/CSS/css1/style.css\">\n" +
@@ -144,7 +186,6 @@ public class IC_Login {
 "  <!-- <link rel=\"stylesheet\" href=\"css/reset.css\"> -->\n" +
 "\n" +
 "   <link rel=\"stylesheet prefetch\" href=\"http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900\"> \n" +
-"  <!-- <link rel=\"stylesheet prefetch\" href=\"http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css\"> -->\n" +
 "\n" +
 "<!--  <link rel=\"stylesheet\" href=\"/CSS/css/signup_and_login.css\">\n" +
 "  <script type=\"text/javascript\" src=\"/JS/js/login_validate.js\"></script>-->\n" +
@@ -159,78 +200,91 @@ public class IC_Login {
         
        out.print(new HeaderGenerator().getHeader(session, "login"));
        
-        out.print(
-" <!-- <div class=\"pen-title\">\n" +
+
+        String loginStatusHTML = "<div class=\"module form-module\">\n" +
 "\n" +
-"  </div>\n" +
-"   Form Module\n" +
-"  <div class=\"module form-module\">\n" +
-"   <div class=\"toggle\">\n" +
-"    <div id=\"clickme\" onClick=\"switchForm()\">Switch</div>\n" +
-"  </div> \n" +
-"  <div class=\"form\" id=\"loginForm\">\n" +
-"    <h2>Login to your account</h2>\n" +
-"    <form onSubmit=\"check_errors()\">\n" +
-"      <input type=\"text\" placeholder=\"Email Address\" id=\"email_input\"  oninput=\"email_check()\"> <p id=\"email_output\"></p>\n" +
-"      <input type=\"password\" placeholder=\"Password\" id=\"password_input\" oninput=\"pass_check()\" > <p id=\"pass_output\"></p>\n" +
-"      <button>Login</button>\n" +
-"    </form>\n" +
-"  </div>\n" +
-"   <div class=\"form\" id=\"registerForm\" onSubmit=\"check_empty()\">\n" +
-"    <h2>Create an account</h2>\n" +
-"    <form >\n" +
-"      <input type=\"text\" placeholder=\"Username\" id=\"uname_input\"> <p id=\"uname_output\"></p>\n" +
-"      <input type=\"password\" placeholder=\"Password\" id=\"password_input1\" oninput=\"pass1_check()\" > <p id=\"pass1_output\"></p>\n" +
-"      <input type=\"password\" placeholder=\"Re-Type Password\" id=\"password_input2\" oninput=\"pass2_check()\"> <p id=\"pass2_output\"></p>\n" +
-"      <input type=\"email\" placeholder=\"Email Address\" id=\"email_input\"  oninput=\"check()\"> <p id=\"email_output\"></p>\n" +
-"      <input type=\"tel\" placeholder=\"Phone Number\" id=\"phoneno_input\"> <p id=\"phoneno_output\"></p>\n" +
-"      <!-- <button type=\"submit\" onClick=\"check_empty()\">Register</button> --\n" +
-"      <!-- <input type=\"submit\" value=\"Register\"/> --\n" +
-"    </form>\n" +
-"  </div> \n" +
-"  <div class=\"cta\"><a href=\"#\">Forgot your password?</a></div>\n" +
-"</div>\n" +
-"\n" +
-"    <script src=\"http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js\"></script>\n" +
-"  \n" +
-"\n" +
-"  \n" +
-"\n" +
-"</body>-->\n" +
-"      \n" +
-"\n" +
+"      <div class=\"form\" style=\"display: block;\">\n" +
+"        <h2>"+loginStatus+"</h2>\n" +
+"        \n" +
+"      </div>\n" +
+"    </div>";
+        
+        
+        
+        
+        String loginForm=
 "    <div class=\"login\" style=\"height:30rem; width:30rem;\">\n" +
 "  <header class=\"header\" >\n" +
 "    <span class=\"text\">Login</span>\n" +
-"    <span class=\"loader\"></span>\n" +
 "  </header>\n" +
-"    <form class=\"form_login\" action=\"loginHandler\" method=\"POST\">  \n" +
-"    <input class=\"input\" type=\"text\" placeholder=\"Username\" id=\"loginUsername\">\n" +
-"    <input class=\"input\" type=\"password\" placeholder=\"Password\" id=\"loginPassword\">\n" +
+"    <form class=\"form_login\" action=\"/loginHandler\" method=\"POST\">  \n" +
+"    <input class=\"input\" type=\"text\" placeholder=\"Username\" id=\"loginUsername\" name=\"loginUsername\">\n" +
+"    <input class=\"input\" type=\"password\" placeholder=\"Password\" id=\"loginPassword\" name=\"loginPassword\">\n" +
 "\n" +
 "    <button class=\"btn\" type=\"submit\" style=\"right:12.8rem;\"></button>\n" +
 "  </form>\n" +
 "</div>\n" +
 "<button class =\"resetbtn\" type= \"reset\" onClick=\"loginReset()\">Reset it\n" +
 "</button>\n" +
-"    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>\n" +
-"\n" +
-"        <script src=\"js1/index.js\"></script>\n" +
-"\n" +
-"    \n" +
-"    \n" +
-"    \n" +
-"  </body>\n" +
-"\n" +
+"    <script src='/JS/js2/jquery.min.js'></script>\n" +
+"\n" ;
+
+        
+        
+        
+        
+        if(loginStatus.equals("")){
+            out.print(loginForm);
+        }
+        else{
+            out.print(loginStatusHTML);
+        }
+        
+        
+        
+        
+        out.print(
+"    </body>\n" +
 "</html>");
 	}
+    
+    
+    public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException{
+        System.out.println("login.jsp's form should pass as type POST, not GET.");
+        doPost(request, response);
+    }
+    
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
+        HttpSession session = request.getSession();
+        String username=null;
+        String password=null;
 
-	public void enterLoginDetails(String username, String password) {
-		// TODO implement here
+
+        username=request.getParameter("loginUsername");
+        password=request.getParameter("loginPassword");
+        
+        enterLoginDetails(username,password, request, response);
+        
+    }
+        
+	public void enterLoginDetails(String username, String password, HttpServletRequest request, HttpServletResponse response) throws IOException{
+        String passwordHash=null;
+        SecurityHash security = new SecurityHash();
+        passwordHash = security.hashPassword(password, "MD5");
+        C_Login C_LoginObj = new C_Login();
+        
+        String loginStatus = C_LoginObj.trySystemLogin(username, passwordHash);
+        
+        if(loginStatus.indexOf("Unfortunately")== -1){
+            //we can log in now.
+            HttpSession session = request.getSession();
+            session.setAttribute("loggedInUsername", username);
+        }
+
+        displayUserLoginGUI(request, response, loginStatus);
+        
 	}
 
-	public void loadLoginGUI() {
-		// TODO implement here
-	}
+	
 
 }

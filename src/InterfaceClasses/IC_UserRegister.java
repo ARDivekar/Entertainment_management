@@ -88,21 +88,9 @@ public class IC_UserRegister extends HttpServlet {
 "      <!-- Form Module-->\n" +
 "      <div class=\"module form-module\">\n" +
 "\n" +
-"      <!-- <div class=\"toggle\">\n" +
-"        <div id=\"clickme\" onClick=\"switchForm()\">Switch</div>\n" +
-"      </div>\n" +
-"      <div class=\"form\" id=\"loginForm\">\n" +
-"        <h2>Login to your account</h2>\n" +
-"        <form>\n" +
-"          <input type=\"text\" placeholder=\"Username\">\n" +
-"          <input type=\"password\" placeholder=\"Password\">\n" +
-"          <button>Login</button>\n" +
-"        </form>\n" +
-"      </div> -->\n" +
-"      <div class=\"form\" id=\"registerForm\">\n" +
-"        <h2>Create an account</h2>\n" );
+"      <div class=\"form\" id=\"registerForm\">\n"  );
        
-       String registerForm = 
+       String registerForm = "        <h2>Create an account</h2>\n"+
 "        <form  onSubmit=\"check_errors()\" action=\"/registerHandler\"  method=\"POST\">\n" +
 "            <input type=\"text\" placeholder=\"Username\" name=\"uname_input\" id=\"uname_input\"> <p id=\"uname_output\"></p>\n" +
 "            <input type=\"text\" placeholder=\"First Name\" name=\"fname_input\" id=\"fname_input\"> <p id=\"fname_output\"></p>\n" +
@@ -139,13 +127,7 @@ public class IC_UserRegister extends HttpServlet {
        
 out.print(
 "      </div>\n" +
-"      <!-- <div class=\"cta\"><a href=\"#\">Forgot your password?</a></div> -->\n" +
 "    </div>\n" +
-"    <!--\n" +
-"        <script src=\"http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js\"></script>\n" +
-"      -->\n" +
-"\n" +
-"\n" +
 "    </body>\n" +
 "</html>");
 	}

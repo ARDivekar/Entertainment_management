@@ -76,7 +76,7 @@ public class HeaderGenerator {
             return "class=\"active\"";
         return "";
     }
-}+"><a href=\"about-us.html\">Our Team</a></li>\n" +
+}+"><a href=\"about-us.jsp\">Our Team</a></li>\n" +
                 
                 
                 
@@ -142,12 +142,20 @@ public class HeaderGenerator {
             return "class=\"active\"";
         return "";
     }
-}+"><a href=\"contact-us.jsp\">Contact</a></li>\n" +
+}+"><a href=\"contact-us.jsp\">Contact</a></li>" +new Object(){
+    public String toString(){
+        if(session.getAttribute("loggedInUsername")!=null)
+//            return "<li><a href=\"#\">"+session.getAttribute("loggedInUsername").toString()+"</a></li>";
+            return "<li><a href=\"#\">Account</a></li>";
+        return "";
+    }
+}+
 "					</ul>\n" +
 "				</div>\n" +
 "            </div><!--/.container-->\n" +
 "        </nav><!--/nav-->\n" +
 "	</header><!--/header-->\n";
+        
         return headerString;
     }
 }
