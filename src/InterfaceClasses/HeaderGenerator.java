@@ -20,7 +20,7 @@ public class HeaderGenerator {
 "            <div class=\"container\">\n" +
 "                <div class=\"row\">\n" +
 "                    <div class=\"col-sm-6 col-xs-4\">\n" +
-"                        <div class=\"top-number\"><p><i class=\"fa fa-phone-square\"></i>  +91 9619432999</p></div>\n" +
+"                        <div class=\"top-number\"><p><i class=\"fa fa-phone-square\"></i>  022 24198101</p></div>\n" +
 "                    </div>\n" +
 "                    <div class=\"col-sm-6 col-xs-8\">\n" +
 "                       <div class=\"social\">\n" +
