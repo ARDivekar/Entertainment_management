@@ -83,7 +83,54 @@
         <url-pattern>/login</url-pattern>
         <url-pattern>/Login</url-pattern>
     </servlet-mapping>
-    
+   
+    <servlet>
+        <servlet-name>discoverMovies</servlet-name>
+        <jsp-file>/discoverMovies.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>discoverMovies</servlet-name>
+        
+        <url-pattern>/discoverMovies.jsp</url-pattern>
+        <url-pattern>/discovermovies.jsp</url-pattern>
+        <url-pattern>/discover movies.jsp</url-pattern>
+        <url-pattern>/discover-movies.jsp</url-pattern>
+        <url-pattern>/discover_movies.jsp</url-pattern>
+        
+        <url-pattern>/discoverMovies.html</url-pattern>
+        <url-pattern>/discovermovies.html</url-pattern>
+        <url-pattern>/discover movies.html</url-pattern>
+        <url-pattern>/discover-movies.html</url-pattern>
+        <url-pattern>/discover_movies.html</url-pattern>
+        
+        <url-pattern>/discoverMovies</url-pattern>
+        <url-pattern>/discovermovies</url-pattern>
+        <url-pattern>/discover movies</url-pattern>
+        <url-pattern>/discover-movies</url-pattern>
+        <url-pattern>/discover_movies</url-pattern>
+    </servlet-mapping> 
+   
+   
+   <servlet>
+        <servlet-name>events</servlet-name>
+        <jsp-file>/events.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>events</servlet-name>
+        
+        <url-pattern>/events.jsp</url-pattern>
+        <url-pattern>/calendar.jsp</url-pattern>
+        
+        <url-pattern>/events</url-pattern>
+        <url-pattern>/calendar</url-pattern>
+        
+        <url-pattern>/events.html</url-pattern>
+        <url-pattern>/calendar.html</url-pattern>
+        
+        
+    </servlet-mapping> 
+   
+   
    
     
     <servlet>
@@ -104,6 +151,8 @@
         <servlet-name>IC_Login</servlet-name>
         <url-pattern>/loginHandler</url-pattern>
     </servlet-mapping>
+    
+    
     
     
     

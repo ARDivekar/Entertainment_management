@@ -15,8 +15,8 @@ public class IC_Login extends HttpServlet {
 
 	public void displayUserLoginGUI(HttpServletRequest request, HttpServletResponse response, String loginStatus) throws IOException {
         HttpSession session = request.getSession();
+        PrintWriter out=response.getWriter();
         
-       PrintWriter out=response.getWriter();
 		out.print("<!DOCTYPE html>\n" +
 "<html>\n" +
 "<head>\n" +

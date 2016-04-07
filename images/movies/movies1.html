@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>All Movies</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+    <!-- core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/main1.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <style>
+    .rating {
+        float:left;
+    }
+
+    .rating:not(:checked) > input {
+        position:absolute;
+        top:-9999px;
+        clip:rect(0,0,0,0);
+    }
+
+    .rating:not(:checked) > label {
+        float:right;
+        width:1em;
+        padding:0 .1em;
+        overflow:hidden;
+        white-space:nowrap;
+        cursor:pointer;
+        font-size:200%;
+        line-height:1.2;
+        color:#ddd;
+        text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+    }
+
+    .rating:not(:checked) > label:before {
+        content: '★ ';
+    }
+
+    .rating > input:checked ~ label {
+        color: #f70;
+        text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+    }
+
+    .rating:not(:checked) > label:hover,
+    .rating:not(:checked) > label:hover ~ label {
+        color: gold;
+        text-shadow:1px 1px goldenrod, 2px 2px #c41f1f, .1em .1em .2em rgba(0,0,0,.5);
+    }  
+
+    .rating > input:checked + label:hover,
+    .rating > input:checked + label:hover ~ label,
+    .rating > input:checked ~ label:hover,
+    .rating > input:checked ~ label:hover ~ label,
+    .rating > label:hover ~ input:checked ~ label {
+        color: #ea0;
+        text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+    }
+
+    .rating > label:active {
+        position:relative;
+        top:2px;
+        left:2px;
+    }
+    </style>
+    
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+<body>
+    <header id="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-4">
+                        <div class="top-number">
+                            <p><i class="fa fa-phone-square"></i>  +91 9619432999</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xs-8">
+                        <div class="social">
+                            <ul class="social-share">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                            </ul>
+                            <div class="search">
+                                <form role="form">
+                                    <input type="text" class="search-form" autocomplete="off" placeholder="Search">
+                                    <i class="fa fa-search"></i>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/.container-->
+        </div>
+        <!--/.top-bar-->
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" height="75" width="200" alt="logo"></a>
+                </div>
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">Our Team</a></li>
+                        <li class="dropdown active  ">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Discover<i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="active"><a href="discovermovies.html">Movies</a></li>
+                                <li ><a href="discoverbooks.html">Books</a></li>
+                                <li><a href="discovertvshows">TVShows</a></li>
+                                <li><a href="discovermusic.html">Music</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="calendar.html">Events</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="contact-us.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--/.container-->
+        </nav>
+        <!--/nav-->
+    </header>
+    <!--/header-->
+    <section id="portfolio">
+        <div class="container">
+            <div class="center">
+                <h2>Discover Movies</h2>
+                <p class="lead">Welcome to the world of movies!! </p>
+                <ol class="breadcrumb">
+                    <li><a href="/discover-movies">Discover Movies</a></li>
+                    <li><a href="/discover-movies.jsp"> Home All Movies</a></li>
+                </ol>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-6">
+                    <div class="tab-wrap">
+                        <div class="tab-content">
+                            <div id="tab1" class="tab-pane active">
+                                <div class="media">
+                                    <div class="pull-left">
+                                        <img class="img-responsive" style="width:170px; height:210px;" src="images/portfolio/movie1.jpg"></img>
+                                    </div>
+                                    <h4>
+                                        Batman VS Superman (2016) 
+                                    </h4>
+                                    <p>
+                                        112 minutes-<b>Fantasy-Fiction</b><br>
+                                        <b>Director</b> Zack Snyder<br>
+                                        <b>Stars</b>:Blake Jenner, jonson Tyler<br>
+                                        Metascore: 75/100<br>
+                                        <b>Release Date:</b> March 25, 2016 (India)
+                                    </p>
+                                    <button type="button " class="watchlist" data-toggle="modal" data-target="#myModal">Read More</button>
+                                    <button type="button " class="watchlist" data-toggle="modal2" datat-target="#myModal2">Add to Collection</button>
+                                </div>
+                                <div class="modal fade" id="myModal" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <!-- <button type="button " class="watchlist" >Add to Collection</button> -->
+                                                <h4 class="modal-title">Batman VS Superman</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>It's been nearly two years since Superman's (Henry Cavill) colossal battle with Zod (Michael Shannon) devastated the city of Metropolis. The loss of life and collateral damage left many feeling angry and helpless, including crime-fighting billionaire Bruce Wayne (Ben Affleck). Convinced that Superman  is now a threat to humanity, Batman embarks on a personal vendetta to end his reign on Earth, while the conniving Lex Luthor (Jesse Eisenberg) launches his own crusade against the Man of Steel.<br> 
+                                                    <b>Release date</b>: March 25, 2016 (India)<br>
+                                                    <b>Director</b>: Zack Snyder<br>
+                                                    <b>Budget</b>: 250 million USD<br>
+                                                    <b>Executive producers:</b> Christopher Nolan, Geoff Johns, Emma Thomas, Michael Uslan, Benjamin Melniker, Wesley Coller<br>
+                                                    <b>Producers</b>: Deborah Snyder, Charles Roven
+                                                </p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a data-toggle="modal" href="#myModal2" class="btn btn-primary">Add To Collection</a>  
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal fade" id="myModal2" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Add To Collection</h4>
+                                            </div>
+                                            <div class="modal-body"  style="font-size:1.25em;">
+                                                <form action="demo_form.jsp">
+                                                    <script type="text/javascript">
+                                                        function onClickWishlistedRadioButton(){
+                                                            var ratingButton = document.getElementById("listing123starrating");
+                                                            ratingButton.disabled=true;
+                                                            var reviewTextArea = document.getElementById("listing123reviewText");
+                                                            reviewTextArea.disabled=true;
+                                                        }
+                                                        function onClickOwnedRadioButton(){
+                                                            var ratingButton = document.getElementById("listing123starrating");
+                                                            ratingButton.disabled=false;
+                                                            var reviewTextArea = document.getElementById("listing123reviewText");
+                                                            reviewTextArea.disabled=false;
+                                                            
+                                                        }
+                                                    </script>
+                                                    <label><input type="radio" name="group1" value="Wishlisted" style="font-size:1.3em" onClick="onClickWishlistedRadioButton()">         Wishlisted</label>
+                                                    <label style="margin-left:2em;"><input type="radio" name="group1" value="Owned" style="font-size:1.3em" onCLick="onClickOwnedRadioButton()">         Owned</label>
+                                                    <p>    
+                                                        <br/>
+                                                        <br>
+                                                    <fieldset class="rating" id="listing123starrating">
+                                                        <legend>Rate this Movie:</legend>
+                                                        <input type="radio" id="star10" name="rating" value="10" /><label for="star10" title="Out of The World">10 stars</label>
+                                                        <input type="radio" id="star9" name="rating" value="9" /><label for="star9" title="Great">9 stars</label>
+                                                        <input type="radio" id="star8" name="rating" value="8" /><label for="star8" title="Very Good">8 stars</label>
+                                                        <input type="radio" id="star7" name="rating" value="7" /><label for="star7" title="Good">7 stars</label>
+                                                        <input type="radio" id="star6" name="rating" value="6" /><label for="star6" title="Kinda Nice">6 stars</label>
+                                                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Average">5 stars</label>
+                                                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Okayish">4 stars</label>
+                                                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Kinda Bad">3 stars</label>
+                                                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Bad">2 stars</label>
+                                                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Pathetic">1 star</label>
+                                                    </fieldset>
+                                                    <br><br><br><br><br>
+                                                    <h2>Comments</h2>
+                                                    <textarea rows="4" cols="50" name="comment" form="usrform" placeholder="Enter review here..." id="listing123reviewText"></textarea>
+                                                    <br><br>
+                                                    </p> 
+                                            </div>
+                                            <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary">Add To Collection</a>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6">
+                    <div class="tab-wrap">
+                        <div class="tab-content">
+                            <div id="tab1" class="tab-pane active">
+                                <div class="media">
+                                    <div class="pull-left">
+                                        <img class="img-responsive" style="width:170px; height:210px;" src="images/portfolio/movie2.jpg" ></img>
+                                    </div>
+                                    <h4>
+                                        Popeye (1980) 
+                                    </h4>
+                                    <p>
+                                        112 minutes-<b>Action-comedy</b><br>
+                                        <b>Director</b>Robert Altman<br>
+                                        <b>Stars</b>:Ryan Guzman, Zoey Deutch<br>
+                                        Metascore: 52/100<br>
+                                        <b>Release Date:</b> December 12, 1980 (USA)
+                                    </p>
+                                    <button type="button " class="watchlist" data-toggle="modal" data-target="#myModal3">Read More</button>
+                                    <button type="button " class="watchlist" data-toggle="modal4" data-target="#myModal4">Add to Collection</button>
+                                </div>
+                                <div class="modal fade" id="myModal3" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Popeye (1980)</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Adventures reprising the adversarial relationship of spinach-gobbling sailor Popeye and seafaring bully Brutus (later called Bluto) as they continue to battle over the affections of fickle Olive Oyl.<br>
+                                                    <b>Initial release:</b> December 12, 1980 (USA)<br>
+                                                    <b>Director:</b> Robert Altman<br>
+                                                    <b>Box office:</b> 60 million USD<br>
+                                                    <b>Screenplay:</b> E. C. Segar, Jules Feiffer<br>
+                                                </p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a data-toggle="modal" href="#myModal4" class="btn btn-primary">Add To Collection</a>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal3">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal fade" id="myModal4" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Add To Collection</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>
+                                                <fieldset class="rating">
+                                                    <legend>Rate this Movie:</legend>
+                                                    <input type="radio" id="star10" name="rating" value="10" /><label for="star10" title="Out of The World">10 stars</label>
+                                                    <input type="radio" id="star9" name="rating" value="9" /><label for="star9" title="Great">9 stars</label>
+                                                    <input type="radio" id="star8" name="rating" value="8" /><label for="star8" title="Very Good">8 stars</label>
+                                                    <input type="radio" id="star7" name="rating" value="7" /><label for="star7" title="Good">7 stars</label>
+                                                    <input type="radio" id="star6" name="rating" value="6" /><label for="star6" title="Kinda Nice">6 stars</label>
+                                                    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Average">5 stars</label>
+                                                    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Okayish">4 stars</label>
+                                                    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Kinda Bad">3 stars</label>
+                                                    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Bad">2 stars</label>
+                                                    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Pathetic">1 star</label>
+                                                </fieldset>
+                                                <br><br>
+                                                </p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal3">Close</button>
+                                                <a href="#" class="btn btn-primary">Add To Wishlist</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-6">
+                    <div class="tab-wrap">
+                        <div class="tab-content">
+                            <div id="tab1" class="tab-pane active">
+                                <div class="media">
+                                    <div class="pull-left">
+                                        <img class="img-responsive" style="width:170px; height:210px;" src="images/portfolio/movie3.jpg"></img>
+                                    </div>
+                                    <h4>
+                                        DeadPool (2016) 
+                                    </h4>
+                                    <p>
+                                        112 minutes-<b>Comedy</b><br>
+                                        <b>Director</b>:Richard Linklater<br>
+                                        <b>Stars</b>:Blake Jenner, Tyler Hoechlin, Ryan Guzman, Zoey Deutch<br>
+                                        Metascore: 85/100
+                                    </p>
+                                    <button type="button " class="watchlist" data-toggle="modal" data-target="#myModal5">Read More</button>
+                                    <button type="button " class="watchlist" data-toggle="modal" data-target="#myModal">Add to Collection</button>
+                                </div>
+                                <div class="modal fade" id="myModal5" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Modal Header</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Some text in the modal.</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6">
+                    <div class="tab-wrap">
+                        <div class="tab-content">
+                            <div id="tab1" class="tab-pane active">
+                                <div class="media">
+                                    <div class="pull-left">
+                                        <img class="img-responsive" style="width:170px; height:210px;" src="images/portfolio/movie4.jpg"></img>
+                                    </div>
+                                    <h4>
+                                        Xmen Apolclypse (2013) 
+                                    </h4>
+                                    <p>
+                                        112 minutes-<b>Comedy</b><br>
+                                        <b>Director</b>:Richard Linklater<br>
+                                        <b>Stars</b>:Blake Jenner, Tyler Hoechlin, Ryan Guzman, Zoey Deutch<br>
+                                        Metascore: 85/100
+                                    </p>
+                                    <button type="button " class="watchlist" data-toggle="modal" data-target="#myModal6">Read More</button>
+                                    <button type="button " class="watchlist" >Add to Collection</button>
+                                </div>
+                                <div class="modal fade" id="myModal" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Modal Header</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Some text in the modal.</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-6">
+                    <div class="tab-wrap">
+                        <div class="tab-content">
+                            <div id="tab1" class="tab-pane active">
+                                <div class="media">
+                                    <div class="pull-left">
+                                        <img class="img-responsive" style="width:205px; height:190px;" src="images/portfolio/movie5.jpg" ></img>
+                                    </div>
+                                    <h4>
+                                        The Jungle  Book (1990) 
+                                    </h4>
+                                    <p>
+                                        112 minutes-<b>Comedy</b><br>
+                                        <b>Director</b>:Richard Linklater<br>
+                                        <b>Stars</b>:Blake Jenner, Tyler Hoechlin, Ryan Guzman, Zoey Deutch<br>
+                                        Metascore: 85/100
+                                    </p>
+                                    <button type="button " class="watchlist" data-toggle="modal" data-target="#myModal">Read More</button>
+                                    <button type="button " class="watchlist" >Add to Collection</button>
+                                </div>
+                                <div class="modal fade" id="myModal" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Modal Header</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Some text in the modal.</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6">
+                    <div class="tab-wrap">
+                        <div class="tab-content">
+                            <div id="tab1" class="tab-pane active">
+                                <div class="media">
+                                    <div class="pull-left">
+                                        <img class="img-responsive"  style="width:205px; height:190px;" src="images/portfolio/movie6.jpg"></img>
+                                    </div>
+                                    <h4>
+                                        Ghost Rider (2012) 
+                                    </h4>
+                                    <p>
+                                        112 minutes-<b>Comedy</b><br>
+                                        <b>Director</b>:Richard Linklater<br>
+                                        <b>Stars</b>:Blake Jenner, Tyler Hoechlin, Ryan Guzman, Zoey Deutch<br>
+                                        Metascore: 85/100
+                                    </p>
+                                    <button type="button " class="watchlist" data-toggle="modal" data-target="#myModal">Read More</button>
+                                    <button type="button " class="watchlist" >Add to Collection</button>
+                                </div>
+                                <div class="modal fade" id="myModal" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Modal Header</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Some text in the modal.</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="padding-left:25%">
+                <div class="container">
+                    <ul class="pagination pagination-lg">
+                        <li><a href="#"><i class="fa fa-long-arrow-left"></i>Previous Page</a></li>
+                        <li class="active"><a href="movies1.html">1</a></li>
+                        <li><a href="movies2.html">2</a></li>
+                        <li><a href="movies3.html">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="books2.html">Next Page<i class="fa fa-long-arrow-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+
+</html>    
+

@@ -80,7 +80,13 @@ public class HeaderGenerator {
                 
                 
                 
-"						<li class=\"dropdown\">\n" +
+"						<li class=\"dropdown "+new Object(){
+    public String toString(){
+        if(activeTab.equalsIgnoreCase("discover"))
+            return "class=\"active\"";
+        return "";
+    }
+}+"\">\n" +
 "							<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Discover<i class=\"fa fa-angle-down\"></i></a>\n" +
 "							<ul class=\"dropdown-menu\">\n" +
 "								<li ><a href=\"discovermovies.html\">Movies</a></li>\n" +
@@ -108,7 +114,13 @@ public class HeaderGenerator {
             return "class=\"active\"";
         return "";
     }
-}+"><a href=\"calendar.html\">Events</a></li>\n" +
+}+"><a href=\"calendar.html\""+new Object(){
+    public String toString(){
+        if(activeTab.equalsIgnoreCase("events"))
+            return "class=\"active\"";
+        return "";
+    }
+}+">Events</a></li>\n" +
                 
                 
                 

@@ -29,7 +29,9 @@ public class Movie extends Listing {
 	private String trivia;
 	private String goofs;
 
-        public Movie(String name, Date releaseDate, int budget, String contentRating, String castList, String productionCompanyList, boolean inColor, int runtime, String languages, String storyline, String genreList, String trivia, String goofs) {
+        public Movie(int listingID, String name, Date releaseDate, int budget, String contentRating, String castList, String productionCompanyList, boolean inColor, int runtime, String languages, String storyline, String genreList, String trivia, String goofs, AggregatedRating rating, String imagePath) {
+            this.imagePath=imagePath;
+            this.listingID=listingID;
             this.name = name;
             this.releaseDate = releaseDate;
             this.budget = budget;
@@ -42,11 +44,106 @@ public class Movie extends Listing {
             this.genreList = genreList;
             this.trivia = trivia;
             this.goofs = goofs;
+            this.rating=rating;
+            this.imagePath=imagePath;
 	}
+
+    public Movie() {
+        name=null;
+        releaseDate=null;
+        budget=-1;
+        contentRating=null;
+        castList=null;
+        productionCompanyList=null;
+        inColor=false;
+        runtime=-1;
+        languages=null;
+        storyline=null;
+        genreList=null;
+        trivia=null;
+        goofs=null;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Date getReleaseDate() {
+        return releaseDate;
+    }
+
+    public int getBudget() {
+        return budget;
+    }
+
+    public String getContentRating() {
+        return contentRating;
+    }
+
+    public String getCastList() {
+        return castList;
+    }
+
+    public String getProductionCompanyList() {
+        return productionCompanyList;
+    }
+
+    public boolean isInColor() {
+        return inColor;
+    }
+
+    public int getRuntime() {
+        return runtime;
+    }
+
+    public String getLanguages() {
+        return languages;
+    }
+
+    public String getStoryline() {
+        return storyline;
+    }
+
+    public String getGenreList() {
+        return genreList;
+    }
+
+    public String getTrivia() {
+        return trivia;
+    }
+
+    public String getGoofs() {
+        return goofs;
+    }
+
+    public int getListingID() {
+        return listingID;
+    }
+
+    public AggregatedRating getRating() {
+        return rating;
+    }
+    
+    public String getImagePath(){
+        return imagePath;
+    }
+    
+    
+    
+    
+    
+    
+    
         
-	public Set<Movie> fetchDiscoverMovieListingsDB(int numListings, int startNum) {
-		// TODO implement here
-		return null;
+	public ArrayList<Movie> fetchDiscoverMovieListingsDB(int numListings, int startNum) {
+		EntertainmentManagementDatabase db = EntertainmentManagementDatabase.getInstance();
+        String limits=" LIMIT "+String.valueOf(startNum)+", "+String.valueOf(numListings);
+        String query = "SELECT Movie.listingID as 'listingID', name, date(releaseDate, 'unixepoch') as 'releaseDate', budget, contentRating, castList, productionCompanyList, inColor, runtime, languages, storyline, genreList, trivia, goofs, ratingOutOf10, numberOfRatings \n"+
+"FROM Movie inner join Listing on Movie.listingID = Listing.listingID ORDER BY ratingOutOf10 DESC "+limits+";";
+        System.out.println(query);
+        ResultSet movieResultSet = db.tryArbitrarySelect(query);
+        
+		return convertFromResultSet(movieResultSet);
 	}
 
 	public int extractMovieListingsFromWeb(int numberOfListings) {
@@ -88,27 +185,40 @@ public class Movie extends Listing {
         ArrayList<Movie> moviesArrayList = new ArrayList<Movie>();
         
         try {
-		while(inputResultSet.next()){
-                    String name = inputResultSet.getString("name"); 
-                    Date releaseDate = EntertainmentManagementDatabase.convertStringToDate(inputResultSet.getString("releaseDate"));
-                    int budget = Integer.valueOf(inputResultSet.getString("budget"));
-                    String contentRating = inputResultSet.getString("contentRating");
-                    String castList = inputResultSet.getString("castList");
-                    String productionCompanyList = inputResultSet.getString("productionCompanyList");
-                    boolean inColor = Boolean.valueOf(inputResultSet.getString("contentRating"));
-                    int  runtime = Integer.valueOf(inputResultSet.getString("runtime"));
-                    String languages = inputResultSet.getString("languages");
-                    String storyline = inputResultSet.getString("storyline");
-                    String genreList = inputResultSet.getString("genreList");
-                    String trivia = inputResultSet.getString("trivia");
-                    String goofs = inputResultSet.getString("goofs");
-                    
-                    Movie tempMovie = new Movie(name, releaseDate, budget, contentRating,castList, productionCompanyList, inColor, runtime, languages, storyline, genreList, trivia, goofs);
-                    System.out.println(tempMovie.toString());
-                    moviesArrayList.add(tempMovie);
-			}
+            while(inputResultSet.next()){
+                int listingID = Integer.valueOf(inputResultSet.getString("listingID"));
+                System.out.println("Movie listing ID: "+listingID);
+                String name = inputResultSet.getString("name"); 
+                Date releaseDate = EntertainmentManagementDatabase.convertStringToDate(inputResultSet.getString("releaseDate"));
+                int budget = Integer.valueOf(inputResultSet.getString("budget"));
+                String contentRating = inputResultSet.getString("contentRating");
+                String castList = inputResultSet.getString("castList");
+                String productionCompanyList = inputResultSet.getString("productionCompanyList");
+                boolean inColor=false;
+                if(inputResultSet.getString("inColor").equalsIgnoreCase("true"))
+                    inColor = true;
+                else if(inputResultSet.getString("inColor").equalsIgnoreCase("false"))
+                     inColor = false;
+                
+                int  runtime = Integer.valueOf(inputResultSet.getString("runtime"));
+                String languages = inputResultSet.getString("languages");
+                String storyline = inputResultSet.getString("storyline");
+                String genreList = inputResultSet.getString("genreList");
+                String trivia = inputResultSet.getString("trivia");
+                String goofs = inputResultSet.getString("goofs");
+                
+                int numberOfRatings = Integer.valueOf(inputResultSet.getString("numberOfRatings"));
+                float ratingOutOf10 = inputResultSet.getFloat("ratingOutOf10");
+                AggregatedRating rating=new AggregatedRating(listingID, ratingOutOf10, numberOfRatings, "", ListingType.MOVIE);
+                String imagePath ="/images/movies/"+listingID+".jpg";
+                Movie tempMovie = new Movie(listingID, name, releaseDate, budget, contentRating,castList, productionCompanyList, inColor, runtime, languages, storyline, genreList, trivia, goofs, rating, imagePath);
+                
+                System.out.println(tempMovie.toString());
+                moviesArrayList.add(tempMovie);
+            }
 		} 
-		catch (SQLException e) {
+		catch (Exception e) {
+            
 			e.printStackTrace();
 			System.out.println("\n\tERROR in Movie.convertFromResultSet() : error while creating object from ResultSet.");
 			return null;
@@ -117,9 +227,10 @@ public class Movie extends Listing {
         return moviesArrayList;
     }
 
-        public String toString(){
+    public String toString(){
         
         String output= "Movie object: \n"+
+            "   listingID: "+listingID+"\n"+
             "	name: "+name+"\n"+
             "	releaseDate: " +releaseDate+"\n"+
             "	budget :"+Integer.valueOf(budget)+"\n"+
@@ -132,7 +243,10 @@ public class Movie extends Listing {
             "   storyline: "+storyline+"\n"+
             "   genreList: "+genreList+"\n"+
             "   trivia:"+trivia+"\n"+
-            "   goofs: "+goofs+"\n";
+            "   goofs: "+goofs+"\n"+
+            "   ratingOutOf10:  "+rating.getRatingOutOf10()+"\n"+
+            "   numberOfReviews: "+rating.getNumberOfRatings()+"\n";
+                    
         
         return output;
     }
